@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microbes in Human Welfare Study Portal — KCET &amp; NEET Question Banks (129 Questions)</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .q-card {
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm no-print">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <button id="brandHomeBtn" type="button" class="flex items-center gap-2.5 text-left group">
+          <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-extrabold text-sm shadow-sm group-hover:bg-indigo-700 transition">MW</div>
+          <div>
+            <h1 class="text-base sm:text-lg font-bold text-slate-900 leading-tight">Microbes in Human Welfare</h1>
+            <p class="text-xs text-slate-500">KCET &amp; NEET PYQ Question Banks &bull; 129 Aligned Questions (2000–2026, incl. EduRev)</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-xl text-xs sm:text-sm font-semibold text-slate-600">
+        <button id="navHomeBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white text-indigo-700 shadow-xs transition">Home Portal</button>
+        <button id="navKcetBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">KCET Bank (51)</button>
+        <button id="navNeetBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">NEET PYQ Bank (78)</button>
+        <button id="navNotesBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Revision Notes</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+
+    <!-- VIEW 1: HOME PORTAL DASHBOARD -->
+    <section id="homeView" class="space-y-6">
+      <!-- Hero Banner -->
+      <div class="rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-md">
+        <span class="inline-block px-3 py-1 bg-white/10 text-indigo-200 text-xs font-semibold rounded-full mb-3 tracking-wide">
+          Complete Biology Exam Preparation Portal &bull; NCERT Class 12 Chapter 8
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2">
+          Microbes in Human Welfare: KCET &amp; NEET PYQ Portal
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-3xl leading-relaxed mb-6">
+          Practice 120 aligned multiple-choice questions (updated with 2025 & 2026 papers) across KCET and NEET Previous Year Questions (PYQs), complete with match-the-following tables, assertion-reasoning, instant answer verification, and high-yield revision notes.
+        </p>
+        <div class="flex flex-wrap items-center gap-3">
+          <button id="heroStartKcetBtn" type="button" class="px-5 py-2.5 rounded-xl bg-white text-indigo-950 font-bold text-sm shadow hover:bg-slate-100 transition">
+            Open KCET Bank (51 Qs)
+          </button>
+          <button id="heroStartNeetBtn" type="button" class="px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-sm shadow hover:bg-indigo-700 transition">
+            Open NEET PYQ Bank (78 Qs)
+          </button>
+          <button id="heroOpenNotesBtn" type="button" class="px-5 py-2.5 rounded-xl bg-slate-800 text-slate-200 font-semibold text-sm hover:bg-slate-700 transition">
+            View Revision Notes
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Statistics & Progress Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Question Bank</p>
+          <p class="text-2xl font-extrabold text-slate-900 mt-1">129 Questions</p>
+          <p class="text-xs text-slate-500 mt-1">51 KCET + 78 NEET PYQ items (2000–2026, incl. EduRev)</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-indigo-600 uppercase tracking-wider">KCET Practice Progress</p>
+          <p id="statKcetProgress" class="text-2xl font-extrabold text-indigo-700 mt-1">0 / 51</p>
+          <p id="statKcetScore" class="text-xs text-slate-500 mt-1">Score: 0 correct (0%)</p>
+        </div>
+        <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+          <p class="text-xs font-bold text-emerald-600 uppercase tracking-wider">NEET PYQ Progress</p>
+          <p id="statNeetProgress" class="text-2xl font-extrabold text-emerald-700 mt-1">0 / 78</p>
+          <p id="statNeetScore" class="text-xs text-slate-500 mt-1">Score: 0 correct (0%)</p>
+        </div>
+      </div>
+
+      <!-- Module Selection Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <!-- Module 1: KCET Bank -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-indigo-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs font-bold">Module 1 &bull; Q1–Q51</span>
+              <span class="text-xs font-semibold text-slate-400">51 MCQs</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">KCET Microbes Question Bank</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Covers LAB &amp; curd, fermented beverages, bioactive molecules (statins, cyclosporin-A, streptokinase), sewage treatment stages (STP &amp; BOD), biogas production, biocontrol agents (Bt, Trichoderma, Baculovirus), and biofertilisers (Glomus, cyanobacteria).
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5">&bull; Includes formatted match-the-following and assertion-reasoning items</li>
+              <li class="flex items-center gap-1.5">&bull; Switch between clean Document View and Interactive Practice Quiz</li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <button id="cardKcetDocBtn" type="button" class="flex-1 py-2 rounded-xl bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-700 transition">
+              Read Question Bank
+            </button>
+            <button id="cardKcetQuizBtn" type="button" class="flex-1 py-2 rounded-xl bg-indigo-50 text-indigo-700 font-semibold text-xs hover:bg-indigo-100 transition">
+              Start Practice Quiz
+            </button>
+          </div>
+        </div>
+
+        <!-- Module 2: NEET PYQ Bank -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between hover:border-emerald-300 transition">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-bold">Module 2 &bull; Q1–Q78</span>
+              <span class="text-xs font-semibold text-slate-400">78 MCQs</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">NEET PYQ Microbes Question Bank</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+              Comprehensive 2000–2024 national entrance bank covering high-yield NCERT concepts: industrial fermentation, organic acids, sewage secondary treatment &amp; activated sludge, methanogens, IPM &amp; nucleopolyhedrovirus, and mycorrhizal associations.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5 mb-6">
+              <li class="flex items-center gap-1.5">&bull; Rigorous NEET-standard matching matrices and deep conceptual questions</li>
+              <li class="flex items-center gap-1.5">&bull; Filter by chapter section, keyword, or practice mode</li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-3 pt-2">
+            <button id="cardNeetDocBtn" type="button" class="flex-1 py-2 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition">
+              Read Question Bank
+            </button>
+            <button id="cardNeetQuizBtn" type="button" class="flex-1 py-2 rounded-xl bg-emerald-50 text-emerald-700 font-semibold text-xs hover:bg-emerald-100 transition">
+              Start Practice Quiz
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2: QUESTION BANK VIEW (FOR KCET & NEET) -->
+    <section id="bankView" class="hidden space-y-4">
+      <!-- Bank Header Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+        <div>
+          <button id="backToPortalBtn" type="button" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 mb-1">
+            &larr; Back to Home Portal
+          </button>
+          <h2 id="bankTitle" class="text-xl font-bold text-slate-900">Question Bank</h2>
+          <p id="bankSubtitle" class="text-xs text-slate-500">KCET &bull; Chapter 8: Microbes in Human Welfare</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Document vs Quiz Mode Toggle -->
+          <div class="flex items-center bg-slate-100 p-1 rounded-xl text-xs font-bold text-slate-600">
+            <button id="modeDocBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white text-indigo-700 shadow-xs transition">Document View</button>
+            <button id="modeQuizBtn" type="button" class="px-3 py-1.5 rounded-lg hover:text-slate-900 transition">Practice Quiz</button>
+          </div>
+
+          <!-- Answer Key Master Toggle -->
+          <button id="toggleAnswersBtn" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold bg-white text-slate-700 hover:bg-slate-50 shadow-xs transition">
+            Hide Answer Key
+          </button>
+
+          <!-- Print / PDF Export Button -->
+          <button id="printBtn" type="button" class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 shadow-xs transition no-print">
+            Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Banner (Visible in Quiz Mode) -->
+      <div id="quizBanner" class="hidden bg-indigo-50 border border-indigo-200 rounded-xl p-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p class="text-xs font-bold text-indigo-800 uppercase tracking-wider">Practice Quiz Active</p>
+          <p id="quizScoreText" class="text-sm font-semibold text-slate-800 mt-0.5">
+            Attempted: <span id="quizAttempted">0</span> / <span id="quizTotal">0</span> &bull; 
+            Correct: <span id="quizCorrect" class="text-emerald-700">0</span> &bull; 
+            Wrong: <span id="quizWrong" class="text-rose-600">0</span> &bull; 
+            Accuracy: <span id="quizAccuracy">0%</span>
+          </p>
+        </div>
+        <button id="resetQuizBtn" type="button" class="px-3 py-1.5 rounded-lg bg-white border border-indigo-300 text-xs font-bold text-indigo-700 hover:bg-indigo-100 transition">
+          Reset Quiz
+        </button>
+      </div>
+
+      <!-- Filter Sub-toolbar -->
+      <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <!-- Search Input -->
+        <div class="flex-1 min-w-[200px]">
+          <input id="searchInput" type="text" placeholder="Search questions, topics, keywords..." class="w-full text-xs px-3 py-2 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        </div>
+
+        <!-- Topic Filter Pills -->
+        <div id="topicFilterPills" class="flex flex-wrap items-center gap-1.5 text-xs">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Questions List Container -->
+      <div id="questionsContainer" class="space-y-4">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Quick Answer Key Matrix -->
+      <div id="quickAnswerMatrix" class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+        <h3 class="text-sm font-bold text-slate-800 mb-3 flex items-center justify-between">
+          <span>Quick Answer Key Matrix</span>
+          <span class="text-xs font-normal text-slate-500">Click any question number to jump</span>
+        </h3>
+        <div id="matrixGrid" class="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-15 gap-2 text-center text-xs">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: REVISION NOTES -->
+    <section id="notesView" class="hidden space-y-6">
+      <div class="flex items-center justify-between bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+        <div>
+          <button id="notesBackHomeBtn" type="button" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 mb-1">
+            &larr; Back to Home Portal
+          </button>
+          <h2 class="text-xl font-bold text-slate-900">High-Yield NCERT Revision Notes</h2>
+          <p class="text-xs text-slate-500">Class 12 Chapter 8: Microbes in Human Welfare</p>
+        </div>
+        <button id="notesPrintBtn" type="button" class="px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 shadow-xs transition no-print">
+          Print Notes
+        </button>
+      </div>
+
+      <!-- Notes Section 1: Household Products -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <h3 class="text-base font-bold text-indigo-900 border-b border-indigo-100 pb-2 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+          1. Microbes in Household Products
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed text-slate-700">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Curd &amp; Lactic Acid Bacteria (LAB)</h4>
+            <p>LAB (such as <em>Lactobacillus</em>) grow in milk and convert it into curd. Inoculum (starter) contains millions of LAB. They produce acids that coagulate and partially digest milk proteins. LAB enriches nutritional quality by producing <strong>Vitamin B12</strong> and plays a beneficial role in checking disease-causing microbes in our gut.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Dough &amp; Baker's Yeast</h4>
+            <p>The puffed-up appearance of dough for idli and dosa is due to CO2 production by bacteria (<em>Leuconostoc</em> &amp; <em>Streptococcus</em>). Bread dough is leavened using <strong>Baker's yeast</strong> (<em>Saccharomyces cerevisiae</em>). Anaerobic respiration releases CO2 bubbles that make bread soft and spongy.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Traditional Beverage &mdash; Toddy</h4>
+            <p><strong>Toddy</strong> is a traditional beverage of parts of southern India made by fermenting the sugary sap collected from palms. Microbes are also used to ferment fish, soybean, and bamboo shoots to make edible delicacy foods.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Cheese Production</h4>
+            <p><strong>Swiss cheese:</strong> Large holes ('eyes') are produced due to massive CO2 production by the bacterium <em>Propionibacterium sharmanii</em>.<br>
+            <strong>Roquefort cheese:</strong> Ripened by growing a specific fungus, <em>Penicillium roqueforti</em>, which imparts its distinct bluish veins and flavour.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes Section 2: Industrial Products & Bioactive Molecules -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <h3 class="text-base font-bold text-indigo-900 border-b border-indigo-100 pb-2 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+          2. Microbes in Industrial Products &amp; Bioactive Molecules
+        </h3>
+        
+        <!-- Organic Acids & Bioactive Molecules Master Table -->
+        <div class="overflow-x-auto mb-4">
+          <table class="w-full text-xs text-left border-collapse border border-slate-200">
+            <thead class="bg-slate-100 text-slate-800 font-bold">
+              <tr>
+                <th class="border border-slate-200 p-2.5">Category</th>
+                <th class="border border-slate-200 p-2.5">Product / Bioactive Molecule</th>
+                <th class="border border-slate-200 p-2.5">Microorganism Source</th>
+                <th class="border border-slate-200 p-2.5">Type &bull; Clinical / Commercial Role</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-slate-700">
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-semibold text-indigo-700" rowspan="4">Organic Acids</td>
+                <td class="border border-slate-200 p-2.5 font-bold">Citric Acid</td>
+                <td class="border border-slate-200 p-2.5"><em>Aspergillus niger</em></td>
+                <td class="border border-slate-200 p-2.5">Fungus &bull; Food preservative and flavoring agent</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Acetic Acid (Vinegar)</td>
+                <td class="border border-slate-200 p-2.5"><em>Acetobacter aceti</em></td>
+                <td class="border border-slate-200 p-2.5">Bacterium &bull; Culinary vinegar and condiment</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Butyric Acid</td>
+                <td class="border border-slate-200 p-2.5"><em>Clostridium butylicum</em></td>
+                <td class="border border-slate-200 p-2.5">Bacterium &bull; Industrial chemical intermediate</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Lactic Acid</td>
+                <td class="border border-slate-200 p-2.5"><em>Lactobacillus</em></td>
+                <td class="border border-slate-200 p-2.5">Bacterium &bull; Milk coagulation &amp; acidification</td>
+              </tr>
+
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-semibold text-emerald-700" rowspan="3">Commercial Enzymes</td>
+                <td class="border border-slate-200 p-2.5 font-bold">Lipases</td>
+                <td class="border border-slate-200 p-2.5"><em>Candida</em> / microbes</td>
+                <td class="border border-slate-200 p-2.5">Used in detergent formulations to remove oily stains</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Pectinases &amp; Proteases</td>
+                <td class="border border-slate-200 p-2.5">Fungi / Bacteria</td>
+                <td class="border border-slate-200 p-2.5">Clarification of commercial bottled fruit juices</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Streptokinase</td>
+                <td class="border border-slate-200 p-2.5"><em>Streptococcus</em> (genetically modified)</td>
+                <td class="border border-slate-200 p-2.5">Bacterium &bull; <strong>'Clot buster'</strong> for myocardial infarction</td>
+              </tr>
+
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-semibold text-purple-700" rowspan="2">Bioactive Molecules</td>
+                <td class="border border-slate-200 p-2.5 font-bold">Cyclosporin A</td>
+                <td class="border border-slate-200 p-2.5"><em>Trichoderma polysporum</em></td>
+                <td class="border border-slate-200 p-2.5">Fungus &bull; <strong>Immunosuppressive agent</strong> in organ transplants</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="border border-slate-200 p-2.5 font-bold">Statins</td>
+                <td class="border border-slate-200 p-2.5"><em>Monascus purpureus</em></td>
+                <td class="border border-slate-200 p-2.5">Yeast &bull; <strong>Blood cholesterol lowering agent</strong> (competitive inhibitor of HMG-CoA reductase)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Fermented Beverages</h4>
+            <p>Produced using <strong>Brewer's yeast</strong> (<em>Saccharomyces cerevisiae</em>). Depending on raw materials and whether distillation is used:<br>
+            &bull; <strong>Without distillation:</strong> Wine and Beer (lower alcohol percentage).<br>
+            &bull; <strong>With distillation:</strong> Whisky, Brandy, and Rum (higher alcohol percentage).</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-1">Antibiotics Discovery</h4>
+            <p><strong>Penicillin:</strong> First antibiotic discovered by <strong>Alexander Fleming</strong> while working on <em>Staphylococci</em> bacteria; mould was <em>Penicillium notatum</em>. Full therapeutic potential established by <strong>Ernest Chain and Howard Florey</strong> (treated wounded soldiers in WWII, Nobel Prize 1945).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes Section 3: Sewage Treatment Plants (STP) -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <h3 class="text-base font-bold text-indigo-900 border-b border-indigo-100 pb-2 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+          3. Microbes in Sewage Treatment (STP) &amp; BOD Concept
+        </h3>
+        
+        <div class="space-y-4 text-xs text-slate-700">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-2">Primary Physical Treatment</h4>
+            <p>Involves physical removal of particles through: (1) <strong>Sequential filtration</strong> (removes floating debris), and (2) <strong>Sedimentation</strong> in primary settling tanks (removes grit: soil and small pebbles). All solids that settle form <strong>primary sludge</strong>, and the supernatant forms the <strong>primary effluent</strong>.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-2">Secondary / Biological Treatment</h4>
+            <ol class="list-decimal list-inside space-y-2 leading-relaxed">
+              <li><strong>Aeration Tank:</strong> Primary effluent is constantly agitated mechanically and air is pumped into it. Useful aerobic microbes grow rapidly into <strong>flocs</strong> (masses of bacteria associated with fungal filaments to form mesh-like structures).</li>
+              <li><strong>BOD Reduction:</strong> Flocs consume the major part of the organic matter in effluent. <strong>Biochemical Oxygen Demand (BOD)</strong> is the amount of oxygen required by bacteria to oxidize all organic matter in one litre of water. <em>Higher BOD = higher polluting potential</em>. BOD drops significantly after treatment.</li>
+              <li><strong>Settling Tank:</strong> Effluent passes to settling tank where flocs sediment to form <strong>activated sludge</strong>. A small part is pumped back to the aeration tank as <em>inoculum</em>.</li>
+              <li><strong>Anaerobic Sludge Digester:</strong> Major part of activated sludge is pumped into anaerobic digesters. Anaerobic bacteria digest bacteria and fungi, releasing <strong>biogas</strong> (a mixture of CH4, H2S, and CO2). Effluent is released into rivers.</li>
+            </ol>
+          </div>
+
+          <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
+            <strong>Ganga &amp; Yamuna Action Plans:</strong> Initiated by the Ministry of Environment and Forests to build major STPs in cities along rivers so that only biologically treated effluent enters these rivers.
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes Section 4: Biogas, Biocontrol & Biofertilisers -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <h3 class="text-base font-bold text-indigo-900 border-b border-indigo-100 pb-2 mb-4 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+          4. Biogas, Biocontrol Agents &amp; Biofertilisers
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs leading-relaxed text-slate-700">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-2">Biogas Production</h4>
+            <p><strong>Methanogens</strong> (e.g. <em>Methanobacterium</em>) grow anaerobically on cellulosic materials in cattle rumen and anaerobic sludge digesters. Biogas is ~50-70% <strong>methane (CH4)</strong> plus CO2 and traces of H2S.<br>
+            Biogas plants (10-15 ft deep concrete tank with floating cover) were developed by <strong>IARI</strong> and <strong>KVIC</strong> in rural India.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-2">Biocontrol Agents</h4>
+            <ul class="space-y-1.5">
+              <li>&bull; <strong>Ladybird beetle:</strong> Controls aphids.</li>
+              <li>&bull; <strong>Dragonflies:</strong> Control mosquitoes.</li>
+              <li>&bull; <strong>Bacillus thuringiensis (Bt):</strong> Dried spores sprayed to kill butterfly caterpillars.</li>
+              <li>&bull; <strong>Trichoderma:</strong> Free-living fungus in root ecosystems; controls fungal root pathogens.</li>
+              <li>&bull; <strong>Baculoviruses (Nucleopolyhedrovirus):</strong> Species-specific, narrow spectrum insecticidal agents; safe for plants, mammals, birds, fish, and non-target beneficial insects in <strong>IPM</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <h4 class="font-bold text-slate-900 mb-2">Biofertilisers</h4>
+            <ul class="space-y-1.5">
+              <li>&bull; <strong>Rhizobium:</strong> Symbiotic N2 fixation in legume root nodules.</li>
+              <li>&bull; <strong>Azotobacter &amp; Azospirillum:</strong> Free-living N2 fixers in soil.</li>
+              <li>&bull; <strong>Mycorrhiza (Glomus):</strong> Fungal association; absorbs phosphorus, provides resistance to root pathogens and drought/salinity tolerance.</li>
+              <li>&bull; <strong>Cyanobacteria (Anabaena, Nostoc, Oscillatoria):</strong> Autotrophic N2 fixers; major biofertiliser in waterlogged paddy fields.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive JavaScript Application -->
+  <script>
+    const KCET_DATA = [{"num": 1, "topic": "Household Products", "tag": "KCET 2014", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "'Roquefort cheese' is ripened by using a __________.", "extras": [], "options": [{"marker": "A", "text": "Fungus"}, {"marker": "B", "text": "Cyanobacteria"}, {"marker": "C", "text": "Type of yeast"}, {"marker": "D", "text": "Bacterium"}], "answerIndex": 0, "explanation": "Roquefort cheese is ripened by growing a specific fungus (Penicillium roqueforti) on it, which gives it a characteristic flavour."}, {"num": 2, "topic": "Household Products", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/exams/questions/the-large-holes-in-swiss-cheese-are-made-by-a-662382e932854f384a553119", "sourceLabel": "Collegedunia KCET Solutions", "stem": "The large holes in 'Swiss-Cheese' are made by a:", "extras": [], "options": [{"marker": "A", "text": "Fungus that releases a lot of gases during metabolic activities"}, {"marker": "B", "text": "Machine"}, {"marker": "C", "text": "Bacterium that produces methane gas"}, {"marker": "D", "text": "Bacterium producing a large amount of CO2"}], "answerIndex": 3, "explanation": "The large holes ('eyes') in Swiss cheese are due to the production of a large amount of carbon dioxide (CO2) by the bacterium Propionibacterium sharmanii."}, {"num": 3, "topic": "Household Products", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/exams/questions/which-vitamin-is-increases-by-lab-in-curd-662382e932854f384a55311d", "sourceLabel": "Collegedunia KCET Solutions", "stem": "The conversion of milk into curd by Lactic Acid Bacteria (LAB) increases its nutritional value by producing:", "extras": [], "options": [{"marker": "A", "text": "Vitamin A"}, {"marker": "B", "text": "Vitamin B12"}, {"marker": "C", "text": "Vitamin C"}, {"marker": "D", "text": "Vitamin D"}], "answerIndex": 1, "explanation": "Lactic Acid Bacteria (Lactobacillus) convert milk into curd by partially digesting milk protein (casein) and improve its nutritional quality by increasing Vitamin B12."}, {"num": 4, "topic": "Household Products", "tag": "KCET PYQ", "sourceUrl": "https://learn.careers360.com/medical/question-which-of-the-following-microbes-is-not-involved-in-the-preparation-of-the-household-products/", "sourceLabel": "Careers360 KCET Archive", "stem": "Which of the following microbes is NOT involved in the preparation of household products?", "extras": [{"type": "text", "content": "a) Aspergillus niger"}, {"type": "text", "content": "b) Lactobacillus"}, {"type": "text", "content": "c) Trichoderma polysporum"}, {"type": "text", "content": "d) Saccharomyces cerevisiae"}, {"type": "text", "content": "e) Propionibacterium sharmanii"}], "options": [{"marker": "A", "text": "a and b only"}, {"marker": "B", "text": "b, d and e only"}, {"marker": "C", "text": "a and c only"}, {"marker": "D", "text": "c and d only"}], "answerIndex": 2, "explanation": "Aspergillus niger (used for industrial citric acid production) and Trichoderma polysporum (used to produce immunosuppressive Cyclosporin-A) are industrial/medical microbes, whereas Lactobacillus, Saccharomyces cerevisiae, and Propionibacterium sharmanii are used in household products."}, {"num": 5, "topic": "Household Products", "tag": "KCET / NCERT", "sourceUrl": "https://collegedunia.com/exams/microbiology-biology-articleid-1178", "sourceLabel": "Collegedunia Biology", "stem": "The puffed-up appearance of dough used for making dosa, idli and bread is due to the production of:", "extras": [], "options": [{"marker": "A", "text": "O2 gas during aerobic respiration"}, {"marker": "B", "text": "CO2 gas during fermentation"}, {"marker": "C", "text": "CH4 gas by methanogens"}, {"marker": "D", "text": "Lactic acid by Yeast"}], "answerIndex": 1, "explanation": "The puffed-up appearance of dough used for making dosa, idli, and bread (using baker's yeast Saccharomyces cerevisiae) is caused by the production of CO2 gas during anaerobic fermentation."}, {"num": 6, "topic": "Industrial & Bioactive", "tag": "KCET 2024", "sourceUrl": "https://www.scribd.com/document/734667574/1713598070-KCET-2024-Dr-Academy-Biology", "sourceLabel": "KCET 2024 Biology Paper", "stem": "The chemical substances which are produced by some microbes which can kill or retard the growth of other disease-causing microbes are known as:", "extras": [], "options": [{"marker": "A", "text": "Statins"}, {"marker": "B", "text": "Streptokinases"}, {"marker": "C", "text": "Cyclosporins"}, {"marker": "D", "text": "Antibiotics"}], "answerIndex": 3, "explanation": "Antibiotics (meaning 'against life' in the context of disease-causing organisms) are chemical substances produced by certain microbes that can kill or retard the growth of other microbes."}, {"num": 7, "topic": "Industrial & Bioactive", "tag": "KCET 2015", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "Ernest Chain and Howard Florey's contribution was:", "extras": [], "options": [{"marker": "A", "text": "Establishing the potential of penicillin as an effective antibiotic"}, {"marker": "B", "text": "Discovery of Streptokinase"}, {"marker": "C", "text": "Production of genetically engineered insulin"}, {"marker": "D", "text": "Discovery of DNA sequence"}], "answerIndex": 0, "explanation": "While Alexander Fleming discovered Penicillin from Penicillium notatum in 1928, its full potential as an effective antibiotic was established much later by Ernest Chain and Howard Florey. Fleming, Chain, and Florey were awarded the Nobel Prize in 1945."}, {"num": 8, "topic": "Industrial & Bioactive", "tag": "KCET 2021", "sourceUrl": "https://image-static.collegedunia.com/public/image/KCET_2021_Biology_Question_Paper_with_Answer_Key_PDFs_August_28_Morning_Session__5dc5b3ab2820accbf700347899826644.pdf", "sourceLabel": "KCET 2021 Official Paper", "stem": "Which among the following products of microbes is NOT obtained from fungi?", "extras": [], "options": [{"marker": "A", "text": "Penicillin"}, {"marker": "B", "text": "Statins"}, {"marker": "C", "text": "Swiss cheese"}, {"marker": "D", "text": "Cyclosporin-A"}], "answerIndex": 2, "explanation": "Swiss cheese is ripened using the bacterium Propionibacterium sharmanii. Penicillin (Penicillium notatum), Statins (Monascus purpureus, a yeast/fungus), and Cyclosporin-A (Trichoderma polysporum) are all obtained from fungi."}, {"num": 9, "topic": "Industrial & Bioactive", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/exams/questions/match-the-following-column-icolumn-iii-cyclosporin-660c035f4cda8c5ea5898dec", "sourceLabel": "Collegedunia KCET Solutions", "stem": "Match the bioactive molecules in Column I with their medical functions in Column II:", "extras": [{"type": "table", "rows": [["", "Column I", "", "Column II"], ["i.", "Cyclosporin - A", "a.", "Clot busters"], ["ii.", "Streptokinase", "b.", "Antibiotic"], ["iii.", "Statins", "c.", "Immunosuppressive agent"], ["iv.", "Penicillin", "d.", "Blood cholesterol lowering agent"]]}], "options": [{"marker": "A", "text": "i - c, ii - a, iii - d, iv - b"}, {"marker": "B", "text": "i - a, ii - c, iii - d, iv - b"}, {"marker": "C", "text": "i - c, ii - d, iii - a, iv - b"}, {"marker": "D", "text": "i - d, ii - a, iii - c, iv - b"}], "answerIndex": 0, "explanation": "Cyclosporin-A is an immunosuppressive agent (c); Streptokinase is a clot buster (a); Statins are blood cholesterol lowering agents (d); Penicillin is an antibiotic (b)."}, {"num": 10, "topic": "Industrial & Bioactive", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "Match the microbes of List I with their commercial organic acid products of List II:", "extras": [{"type": "table", "rows": [["", "List I (Microbe)", "", "List II (Commercial Product)"], ["a)", "Aspergillus niger", "i)", "Lactic acid"], ["b)", "Acetobacter aceti", "ii)", "Butyric acid"], ["c)", "Clostridium butylicum", "iii)", "Acetic acid"], ["d)", "Lactobacillus", "iv)", "Citric acid"]]}], "options": [{"marker": "A", "text": "a - iv, b - iii, c - ii, d - i"}, {"marker": "B", "text": "a - iii, b - iv, c - ii, d - i"}, {"marker": "C", "text": "a - iv, b - ii, c - iii, d - i"}, {"marker": "D", "text": "a - i, b - iii, c - ii, d - iv"}], "answerIndex": 0, "explanation": "Aspergillus niger (a fungus) produces citric acid (iv); Acetobacter aceti (a bacterium) produces acetic acid (iii); Clostridium butylicum (a bacterium) produces butyric acid (ii); Lactobacillus (a bacterium) produces lactic acid (i)."}, {"num": 11, "topic": "Industrial & Bioactive", "tag": "KCET / NCERT", "sourceUrl": "https://learn.careers360.com/ncert/question-find-out-the-name-of-the-microbes-from-which-cyclosporin-a-an-immunosuppressive-drug-and-statins-blood-cholesterol-lowering-agents-are-obtained/", "sourceLabel": "Careers360 NCERT Solutions", "stem": "Statins, used commercially as blood-cholesterol lowering agents, are produced by the yeast:", "extras": [], "options": [{"marker": "A", "text": "Saccharomyces cerevisiae"}, {"marker": "B", "text": "Trichoderma polysporum"}, {"marker": "C", "text": "Monascus purpureus"}, {"marker": "D", "text": "Aspergillus niger"}], "answerIndex": 2, "explanation": "Statins are produced by the yeast Monascus purpureus. They act by competitively inhibiting the enzyme HMG-CoA reductase responsible for synthesis of cholesterol."}, {"num": 12, "topic": "Industrial & Bioactive", "tag": "KCET / NCERT", "sourceUrl": "https://examtech.org/blog/streptokinase-uses-in-medicine", "sourceLabel": "Examtech KCET Biology", "stem": "Streptokinase, used as a 'clot buster' for removing clots from the blood vessels of patients who have undergone myocardial infarction, is obtained from:", "extras": [], "options": [{"marker": "A", "text": "Streptococcus"}, {"marker": "B", "text": "Staphylococcus"}, {"marker": "C", "text": "Clostridium"}, {"marker": "D", "text": "Acetobacter"}], "answerIndex": 0, "explanation": "Streptokinase is produced by the bacterium Streptococcus and modified by genetic engineering to act as a thrombolytic 'clot buster' in myocardial infarction patients."}, {"num": 13, "topic": "Industrial & Bioactive", "tag": "KCET / NCERT", "sourceUrl": "https://byjus.com/biology/important-questions-class-12-biology-chapter-10-microbes-human-welfare/", "sourceLabel": "BYJU'S Class 12 Biology", "stem": "Bottled fruit juices bought from the market are clearer as compared to those made at home because they are clarified using:", "extras": [], "options": [{"marker": "A", "text": "Lipases and Nucleases"}, {"marker": "B", "text": "Pectinases and Proteases"}, {"marker": "C", "text": "Amylases and Lipases"}, {"marker": "D", "text": "Streptokinase and Trypsin"}], "answerIndex": 1, "explanation": "Bottled fruit juices are clarified by the use of pectinases and proteases, which digest pectin and protein fibres that otherwise make homemade juice cloudy."}, {"num": 14, "topic": "Industrial & Bioactive", "tag": "KCET / NCERT", "sourceUrl": "https://deekshalearning.com/neet/class-12-biology-unit-8-microbes-in-human-welfare/", "sourceLabel": "Deeksha Class 12 Biology", "stem": "Which of the following alcoholic beverages are produced WITHOUT distillation of the fermented broth?", "extras": [], "options": [{"marker": "A", "text": "Whisky and Brandy"}, {"marker": "B", "text": "Wine and Beer"}, {"marker": "C", "text": "Rum and Gin"}, {"marker": "D", "text": "Wine and Whisky"}], "answerIndex": 1, "explanation": "Wine and beer are produced without distillation, whereas whisky, brandy, and rum are produced by distillation of the fermented broth."}, {"num": 15, "topic": "Sewage & BOD", "tag": "KCET 2018", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "The microorganisms involved in floc formation during secondary sewage treatment are:", "extras": [], "options": [{"marker": "A", "text": "Anaerobic bacteria and fungus"}, {"marker": "B", "text": "Aerobic bacteria and fungus"}, {"marker": "C", "text": "Autotrophic bacteria and yeast"}, {"marker": "D", "text": "Fungus and algae"}], "answerIndex": 1, "explanation": "Flocs are mesh-like structures formed during secondary (biological) sewage treatment in aeration tanks by masses of aerobic bacteria associated with fungal filaments."}, {"num": 16, "topic": "Sewage & BOD", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/exams/questions/four-students-were-assigned-a-science-project-to-f-660bef1b4cda8c5ea585dc50", "sourceLabel": "Collegedunia KCET Solutions", "stem": "Four students collected water samples from four different water bodies and measured their Biochemical Oxygen Demand (BOD). Which among the following BOD values indicates the most highly polluted water sample?", "extras": [], "options": [{"marker": "A", "text": "0.16 mg/L"}, {"marker": "B", "text": "0.6 mg/L"}, {"marker": "C", "text": "0.06 mg/L"}, {"marker": "D", "text": "6 mg/L"}], "answerIndex": 3, "explanation": "BOD measures the amount of dissolved oxygen required by aerobic bacteria to oxidize all organic matter in 1 litre of water. The higher the BOD value (6 mg/L), the greater its polluting potential and biodegradable organic matter."}, {"num": 17, "topic": "Sewage & BOD", "tag": "KCET / NCERT", "sourceUrl": "https://deekshalearning.com/neet/class-12-biology-unit-8-microbes-in-human-welfare/", "sourceLabel": "Deeksha Class 12 Biology", "stem": "During primary treatment of sewage, floating debris and grit (soil and small pebbles) are removed respectively by:", "extras": [], "options": [{"marker": "A", "text": "Sequential filtration and Sedimentation"}, {"marker": "B", "text": "Aeration and Anaerobic digestion"}, {"marker": "C", "text": "Flocculation and Chlorination"}, {"marker": "D", "text": "Sedimentation and Biological oxidation"}], "answerIndex": 0, "explanation": "Primary sewage treatment is a physical process: floating debris is removed by sequential filtration, and grit (soil and small pebbles) is removed by sedimentation."}, {"num": 18, "topic": "Sewage & BOD", "tag": "KCET / NCERT", "sourceUrl": "https://deekshalearning.com/neet/class-12-biology-unit-8-microbes-in-human-welfare/", "sourceLabel": "Deeksha Class 12 Biology", "stem": "In a sewage treatment plant, once the BOD of sewage is reduced significantly, the bacterial 'flocs' are allowed to sediment in a settling tank. This sediment is called:", "extras": [], "options": [{"marker": "A", "text": "Primary sludge"}, {"marker": "B", "text": "Activated sludge"}, {"marker": "C", "text": "Primary effluent"}, {"marker": "D", "text": "Anaerobic grit"}], "answerIndex": 1, "explanation": "Once BOD is reduced in the aeration tank, the effluent is passed into a settling tank where bacterial flocs sediment to form 'activated sludge'. A small part is pumped back as inoculum, and the rest goes to anaerobic sludge digesters."}, {"num": 19, "topic": "Biogas Production", "tag": "KCET 2021", "sourceUrl": "https://image-static.collegedunia.com/public/image/KCET_2021_Biology_Question_Paper_with_Answer_Key_PDFs_August_28_Morning_Session__5dc5b3ab2820accbf700347899826644.pdf", "sourceLabel": "KCET 2021 Official Paper", "stem": "The technology of biogas production was developed in India mainly due to the joint efforts of:", "extras": [], "options": [{"marker": "A", "text": "KVIC only"}, {"marker": "B", "text": "IARI only"}, {"marker": "C", "text": "CDRI and IARI"}, {"marker": "D", "text": "Both KVIC and IARI"}], "answerIndex": 3, "explanation": "The technology of biogas (gobar gas) production from cattle dung was developed in India largely due to the efforts of the Indian Agricultural Research Institute (IARI) and the Khadi and Village Industries Commission (KVIC)."}, {"num": 20, "topic": "Biogas Production", "tag": "KCET 2020", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "Ruminant animals can digest cellulose in their food, whereas human beings are unable to do so. This is because:", "extras": [], "options": [{"marker": "A", "text": "Cellulose reduces the bulk of food"}, {"marker": "B", "text": "Methanogens are absent in the human gut"}, {"marker": "C", "text": "Methanogens are present in the human gut"}, {"marker": "D", "text": "Cellulose is a simple sugar"}], "answerIndex": 1, "explanation": "Methanogenic bacteria (such as Methanobacterium) are present in the rumen of cattle where they help in the breakdown of cellulose and nutrition of the animal, but they are absent in the human gut."}, {"num": 21, "topic": "Biogas Production", "tag": "KCET / NCERT", "sourceUrl": "https://byjus.com/biology/important-questions-class-12-biology-chapter-10-microbes-human-welfare/", "sourceLabel": "BYJU'S Class 12 Biology", "stem": "The major gases produced during anaerobic digestion of sludge in a biogas plant are:", "extras": [], "options": [{"marker": "A", "text": "Methane, Hydrogen sulphide and Carbon dioxide"}, {"marker": "B", "text": "Methane, Oxygen and Nitrogen"}, {"marker": "C", "text": "Carbon monoxide, Ethane and Nitrogen"}, {"marker": "D", "text": "Sulphur dioxide, Carbon dioxide and Oxygen"}], "answerIndex": 0, "explanation": "During anaerobic digestion in sludge digesters or biogas plants, methanogenic bacteria produce a mixture of gases containing Methane (CH4, 50\u201370%), Carbon dioxide (CO2), Hydrogen (H2), and Hydrogen sulphide (H2S)."}, {"num": 22, "topic": "Biocontrol Agents", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/exams/questions/identify_the_odd_one_out-6285d292e3dd7ead3aed1d2e", "sourceLabel": "Collegedunia KCET Solutions", "stem": "Which of the following is a free-living fungus very common in root ecosystems and acts as an effective biocontrol agent against several plant pathogens?", "extras": [], "options": [{"marker": "A", "text": "Ustilago"}, {"marker": "B", "text": "Alternaria"}, {"marker": "C", "text": "Colletotrichum"}, {"marker": "D", "text": "Trichoderma"}], "answerIndex": 3, "explanation": "Trichoderma species are free-living fungi that are very common in the root ecosystems and serve as effective biological control agents for several plant pathogens."}, {"num": 23, "topic": "Biocontrol Agents", "tag": "KCET PYQ", "sourceUrl": "https://tardigrade.in/question/the-majority-of-baculoviruses-are-used-as-biological-control-gwmwfnhr", "sourceLabel": "Tardigrade KCET Biology", "stem": "The majority of Baculoviruses used as biological control agents against insects and other arthropods belong to the genus:", "extras": [], "options": [{"marker": "A", "text": "Nucleopolyhedrovirus"}, {"marker": "B", "text": "Adenovirus"}, {"marker": "C", "text": "Retrovirus"}, {"marker": "D", "text": "Rhinovirus"}], "answerIndex": 0, "explanation": "Baculoviruses are pathogens that attack insects and other arthropods. The majority used as biological control agents belong to the genus Nucleopolyhedrovirus."}, {"num": 24, "topic": "Biocontrol Agents", "tag": "KCET PYQ", "sourceUrl": "https://tardigrade.in/question/baculoviruses-nucleopolyhedrovirus-do-not-show-8cxnyvgf", "sourceLabel": "Tardigrade KCET Biology", "stem": "Baculoviruses (Nucleopolyhedrovirus) are ideal for Integrated Pest Management (IPM) programmes because they show:", "extras": [], "options": [{"marker": "A", "text": "Broad-spectrum antibacterial activity"}, {"marker": "B", "text": "Species-specific, narrow-spectrum insecticidal applications"}, {"marker": "C", "text": "Toxic effects on birds, fish and mammals"}, {"marker": "D", "text": "Negative impacts on beneficial non-target insects"}], "answerIndex": 1, "explanation": "Nucleopolyhedrovirus are excellent candidates for species-specific, narrow-spectrum insecticidal applications and have no negative impacts on plants, mammals, birds, fish, or non-target beneficial insects."}, {"num": 25, "topic": "Biocontrol Agents", "tag": "KCET 2025", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-2025-april-16-biology-question-paper", "sourceLabel": "KCET 2025 Biology Paper", "stem": "Given below are two statements regarding biological control of pests and diseases:", "extras": [{"type": "text", "content": "Statement I: Ladybird (a beetle with red and black markings) and Dragonflies are useful to get rid of aphids and mosquitoes respectively."}, {"type": "text", "content": "Statement II: Trichoderma species are effective biocontrol agents for several plant pathogens."}, {"type": "text", "content": "Choose the correct option:"}], "options": [{"marker": "1", "text": "Statement I is incorrect, but Statement II is correct"}, {"marker": "2", "text": "Both Statement I and Statement II are correct"}, {"marker": "3", "text": "Statement I is correct, but Statement II is incorrect"}, {"marker": "4", "text": "Both Statement I and Statement II are incorrect"}], "answerIndex": 1, "explanation": "Both statements are directly from NCERT Class 12: Ladybirds control aphids, Dragonflies control mosquitoes, and free-living Trichoderma fungi control plant root pathogens."}, {"num": 26, "topic": "Biofertilisers", "tag": "KCET 2025", "sourceUrl": "https://collegedunia.com/exams/questions/match-the-column-i-with-column-ii-choose-the-corre-6801e9fa0fe8752898ee719e", "sourceLabel": "Collegedunia KCET 2025", "stem": "Match Column-I with Column-II and choose the correct option:", "extras": [{"type": "table", "rows": [["", "Column-I", "", "Column-II"], ["a)", "Streptococcus", "i)", "Free-living nitrogen-fixing cyanobacteria"], ["b)", "Penicillium", "ii)", "Clot buster"], ["c)", "Methanogens", "iii)", "Source of antibiotic"], ["d)", "Anabaena", "iv)", "Biogas production"]]}], "options": [{"marker": "1", "text": "a - i, b - iii, c - iv, d - ii"}, {"marker": "2", "text": "a - ii, b - iv, c - iii, d - i"}, {"marker": "3", "text": "a - ii, b - iii, c - iv, d - i"}, {"marker": "4", "text": "a - iii, b - ii, c - iv, d - i"}], "answerIndex": 2, "explanation": "Streptococcus produces streptokinase (clot buster, ii); Penicillium is a source of antibiotic (iii); Methanogens carry out biogas production (iv); Anabaena is a nitrogen-fixing cyanobacterium (i)."}, {"num": 27, "topic": "Biofertilisers", "tag": "KCET / NCERT", "sourceUrl": "https://www.aakash.ac.in/ncert-solutions/class-12/biology/chapter-10-microbes-in-human-welfare-solutions", "sourceLabel": "Aakash NCERT Solutions", "stem": "Many members of the fungal genus __________ form symbiotic mycorrhizal associations with roots of higher plants.", "extras": [], "options": [{"marker": "A", "text": "Glomus"}, {"marker": "B", "text": "Monascus"}, {"marker": "C", "text": "Penicillium"}, {"marker": "D", "text": "Aspergillus"}], "answerIndex": 0, "explanation": "Many members of the genus Glomus form mycorrhiza (symbiotic association between fungi and roots of higher plants). The fungal symbiont absorbs phosphorus from soil and passes it to the plant."}, {"num": 28, "topic": "Biofertilisers", "tag": "KCET / NCERT", "sourceUrl": "https://www.aakash.ac.in/ncert-solutions/class-12/biology/chapter-10-microbes-in-human-welfare-solutions", "sourceLabel": "Aakash NCERT Solutions", "stem": "Which of the following benefits is primarily provided by the fungal symbiont (Glomus) in a mycorrhizal association with plant roots?", "extras": [], "options": [{"marker": "A", "text": "Fixation of atmospheric nitrogen into ammonia"}, {"marker": "B", "text": "Absorption of phosphorus from soil and resistance to root-borne pathogens"}, {"marker": "C", "text": "Production of citric acid in root nodules"}, {"marker": "D", "text": "Anaerobic digestion of cellulose in soil"}], "answerIndex": 1, "explanation": "In mycorrhiza, the fungal symbiont absorbs phosphorus from the soil and passes it to the plant, while also conferring resistance to root-borne pathogens and tolerance to salinity and drought."}, {"num": 29, "topic": "Biofertilisers", "tag": "KCET / NCERT", "sourceUrl": "https://collegedunia.com/exams/microbiology-biology-articleid-1178", "sourceLabel": "Collegedunia Biology", "stem": "Which pair of bacteria can fix atmospheric nitrogen while free-living in the soil, thereby enriching the nitrogen content of the soil?", "extras": [], "options": [{"marker": "A", "text": "Rhizobium and Frankia"}, {"marker": "B", "text": "Azospirillum and Azotobacter"}, {"marker": "C", "text": "Lactobacillus and Acetobacter"}, {"marker": "D", "text": "Nitrosomonas and Pseudomonas"}], "answerIndex": 1, "explanation": "Azospirillum and Azotobacter are free-living nitrogen-fixing bacteria in soil, whereas Rhizobium fixes nitrogen symbiotically in root nodules of leguminous plants."}, {"num": 30, "topic": "Household Products", "tag": "KCET PYQ", "sourceUrl": "https://collegedunia.com/articles/e-61-kcet-pyqs-for-microbes-in-human-welfare-with-solutions", "sourceLabel": "Collegedunia KCET Archive", "stem": "A micro-organism, when viewed under a compound microscope with an objective lens of 40X and an eyepiece of 10X magnification, measured 4000 \u00b5m in length. The same micro-organism when observed under a dissection microscope with a lens of 10X magnification would measure:", "extras": [], "options": [{"marker": "A", "text": "100 \u00b5m"}, {"marker": "B", "text": "10 \u00b5m"}, {"marker": "C", "text": "400 \u00b5m"}, {"marker": "D", "text": "40 \u00b5m"}], "answerIndex": 0, "explanation": "Total magnification in the compound microscope = Objective (40X) \u00d7 Eyepiece (10X) = 400X. Actual size of microbe = Apparent size / Magnification = 4000 \u00b5m / 400 = 10 \u00b5m. Under a 10X dissection microscope, apparent size = Actual size (10 \u00b5m) \u00d7 10 = 100 \u00b5m."}, {"num": 31, "topic": "Chemicals & Bioactive Molecules", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "Which of the following organic acids is produced by the microbial action of a bacterium rather than a fungus?", "extras": [], "options": [{"marker": "A", "text": "Citric acid"}, {"marker": "B", "text": "Acetic acid"}, {"marker": "C", "text": "Oxalic acid"}, {"marker": "D", "text": "Gluconic acid"}], "answerIndex": 1, "explanation": "Acetic acid is produced by the bacterium Acetobacter aceti, whereas citric acid, oxalic acid, and gluconic acid are typically industrial products of the filamentous fungus Aspergillus niger."}, {"num": 32, "topic": "Sewage Treatment", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "In secondary sewage treatment, during the oxidation of organic matter in the aeration tank, which of the following changes takes place in the effluent?", "extras": [], "options": [{"marker": "A", "text": "Biochemical Oxygen Demand (BOD) increases sharply"}, {"marker": "B", "text": "Biochemical Oxygen Demand (BOD) decreases significantly"}, {"marker": "C", "text": "Dissolved oxygen in water drops permanently to zero"}, {"marker": "D", "text": "Aerobic flocs are digested anaerobically into biogas"}], "answerIndex": 1, "explanation": "As the aerobic microbes grow into flocs and consume the major portion of the organic matter in the aeration tank, the Biochemical Oxygen Demand (BOD) of the sewage decreases significantly, reducing its polluting potential."}, {"num": 33, "topic": "Biocontrol Agents", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "Baculoviruses belonging to the genus Nucleopolyhedrovirus are desirable biocontrol agents in an Integrated Pest Management (IPM) program because they:", "extras": [], "options": [{"marker": "A", "text": "Have a broad spectrum of insecticidal activity killing non-target organisms"}, {"marker": "B", "text": "Are species-specific, narrow-spectrum and have no negative impact on non-target organisms"}, {"marker": "C", "text": "Kill helpful pollinators like honeybees to reduce competition"}, {"marker": "D", "text": "Synthesize chemical organophosphates directly in plant tissues"}], "answerIndex": 1, "explanation": "Baculoviruses (genus Nucleopolyhedrovirus) are pathogen-specific, narrow-spectrum insecticidal agents with no negative impacts on plants, mammals, birds, fish, or non-target beneficial insects, making them excellent candidates for IPM."}, {"num": 34, "topic": "Biofertilisers", "tag": "KCET 2020", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2020 Biology Paper", "stem": "Which of the following organisms forms a symbiotic association with plant roots (mycorrhiza) and absorbs phosphorus from the soil?", "extras": [], "options": [{"marker": "A", "text": "Glomus"}, {"marker": "B", "text": "Rhizobium"}, {"marker": "C", "text": "Azotobacter"}, {"marker": "D", "text": "Frankia"}], "answerIndex": 0, "explanation": "Many members of the fungal genus Glomus form mycorrhizal associations with plant roots. The fungal symbiont absorbs phosphorus from the soil and transfers it to the host plant."}, {"num": 35, "topic": "Biogas Production", "tag": "KCET 2019", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2019 Biology Paper", "stem": "Methanogenic bacteria like Methanobacterium are found abundantly in:", "extras": [], "options": [{"marker": "A", "text": "Aeration tanks of secondary sewage treatment plants"}, {"marker": "B", "text": "Anaerobic sludge digesters and the rumen of cattle"}, {"marker": "C", "text": "Primary settling tanks during sedimentation"}, {"marker": "D", "text": "Bottled fruit juices as a clarifier"}], "answerIndex": 1, "explanation": "Methanobacterium and other methanogens grow anaerobically on cellulosic materials and are present in large numbers in the anaerobic sludge digesters of sewage plants and inside the rumen of ruminant cattle."}, {"num": 36, "topic": "Household Products", "tag": "KCET 2018", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2018 Biology Paper", "stem": "'Toddy', a traditional beverage of parts of southern India, is made by:", "extras": [], "options": [{"marker": "A", "text": "Fermenting milk with Lactobacillus"}, {"marker": "B", "text": "Fermenting sap from palm trees"}, {"marker": "C", "text": "Distilling fermented malted cereals"}, {"marker": "D", "text": "Ripening curd with Penicillium roqueforti"}], "answerIndex": 1, "explanation": "Toddy is a traditional refreshing beverage produced in southern India by the natural fermentation of sap collected from the flowers or spadix of palm trees."}, {"num": 37, "topic": "Chemicals & Bioactive Molecules", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "The enzyme used in detergent formulations to remove oily stains from laundry is:", "extras": [], "options": [{"marker": "A", "text": "Protease"}, {"marker": "B", "text": "Pectinase"}, {"marker": "C", "text": "Lipase"}, {"marker": "D", "text": "Cellulase"}], "answerIndex": 2, "explanation": "Lipases produced by microbes are incorporated into modern laundry detergent formulations to hydrolyse and remove stubborn lipid and oily stains from clothes."}, {"num": 38, "topic": "Chemicals & Bioactive Molecules", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "Bottled fruit juices bought from the market are clearer than homemade juices because they are treated with:", "extras": [], "options": [{"marker": "A", "text": "Lipases and Amylases"}, {"marker": "B", "text": "Pectinases and Proteases"}, {"marker": "C", "text": "Streptokinase and Statins"}, {"marker": "D", "text": "Cellulase and Ligase"}], "answerIndex": 1, "explanation": "Commercial fruit juices are clarified by treatment with pectinases and proteases, which break down suspended pectins and proteinaceous colloids that cause cloudiness."}, {"num": 39, "topic": "Chemicals & Bioactive Molecules", "tag": "KCET 2015", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2015 Biology Paper", "stem": "Streptokinase, used as a 'clot buster' for removing blood clots from patients who have undergone myocardial infarction, is obtained from:", "extras": [], "options": [{"marker": "A", "text": "Streptococcus bacterium modified by genetic engineering"}, {"marker": "B", "text": "Trichoderma polysporum fungus"}, {"marker": "C", "text": "Monascus purpureus yeast"}, {"marker": "D", "text": "Clostridium butylicum"}], "answerIndex": 0, "explanation": "Streptokinase is produced by the bacterium Streptococcus and modified by genetic engineering. It functions as a clot buster to dissolve thrombi in blood vessels of heart-attack patients."}, {"num": 40, "topic": "Biofertilisers", "tag": "KCET 2024", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2024 Biology Paper", "stem": "Which of the following free-living soil bacteria can fix atmospheric nitrogen and enrich soil nitrogen content?", "extras": [], "options": [{"marker": "A", "text": "Rhizobium"}, {"marker": "B", "text": "Azotobacter and Azospirillum"}, {"marker": "C", "text": "Glomus"}, {"marker": "D", "text": "Penicillium"}], "answerIndex": 1, "explanation": "Azotobacter and Azospirillum are free-living nitrogen-fixing bacteria in the soil that enrich its nitrogen content without requiring a symbiotic root nodule structure."}, {"num": 41, "topic": "Biocontrol Agents", "tag": "KCET 2023", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2023 Biology Paper", "stem": "A biological control agent being developed for use in the treatment of several plant root diseases caused by fungal pathogens is:", "extras": [], "options": [{"marker": "A", "text": "Lactobacillus"}, {"marker": "B", "text": "Trichoderma"}, {"marker": "C", "text": "Baculovirus"}, {"marker": "D", "text": "Methanobacterium"}], "answerIndex": 1, "explanation": "Trichoderma is a free-living soil fungus common in root ecosystems that acts as an effective antagonistic biocontrol agent against several plant pathogens."}, {"num": 42, "topic": "Biogas Production", "tag": "KCET 2022", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2022 Biology Paper", "stem": "Which institutes spearheaded the development of rural biogas (gobar gas) technology in India?", "extras": [], "options": [{"marker": "A", "text": "ICRISAT and ICAR"}, {"marker": "B", "text": "IARI (Indian Agricultural Research Institute) and KVIC (Khadi and Village Industries Commission)"}, {"marker": "C", "text": "NDRI and NEERI"}, {"marker": "D", "text": "CSIR and ICMR"}], "answerIndex": 1, "explanation": "The technology of biogas production was developed in India largely due to the pioneering collaborative efforts of the Indian Agricultural Research Institute (IARI) and Khadi and Village Industries Commission (KVIC)."}, {"num": 43, "topic": "Industrial Fermentations", "tag": "KCET 2021", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2021 Biology Paper", "stem": "Which of the following alcoholic beverages are produced without distillation of the fermented broth?", "extras": [], "options": [{"marker": "A", "text": "Whisky and Brandy"}, {"marker": "B", "text": "Wine and Beer"}, {"marker": "C", "text": "Rum and Gin"}, {"marker": "D", "text": "Brandy and Rum"}], "answerIndex": 1, "explanation": "Wine and beer are produced by yeast fermentation of fruits and malted cereals without distillation, whereas whisky, brandy, and rum are produced by distillation of the fermented broth."}, {"num": 44, "topic": "Household Products", "tag": "KCET 2017", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2017 Biology Paper", "stem": "The microorganism responsible for producing the large holes in Swiss cheese by releasing carbon dioxide is:", "extras": [], "options": [{"marker": "A", "text": "Propionibacterium sharmanii"}, {"marker": "B", "text": "Penicillium roqueforti"}, {"marker": "C", "text": "Saccharomyces cerevisiae"}, {"marker": "D", "text": "Streptococcus thermophilus"}], "answerIndex": 0, "explanation": "The large holes in Swiss cheese are caused by the production of large volumes of CO2 gas during the fermentation by the bacterium Propionibacterium sharmanii."}, {"num": 45, "topic": "Biofertilisers", "tag": "KCET 2016", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2016 Biology Paper", "stem": "In paddy (rice) fields, which of the following organisms serves as an important biofertiliser that enriches the soil with organic matter and fixed nitrogen?", "extras": [], "options": [{"marker": "A", "text": "Cyanobacteria (Blue-green algae)"}, {"marker": "B", "text": "Mycorrhizal fungi"}, {"marker": "C", "text": "Lactobacillus"}, {"marker": "D", "text": "Clostridium butylicum"}], "answerIndex": 0, "explanation": "In waterlogged paddy fields, cyanobacteria (such as Nostoc, Anabaena, and Oscillatoria) act as vital autotrophic biofertilisers, fixing atmospheric nitrogen and adding fertility-enhancing organic matter."}, {"topic": "Household Products", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Question Paper", "stem": "The conversion of milk into curd by LAB increases the nutritional value by producing ________.", "extras": [], "options": [{"marker": "A", "text": "Vitamin A"}, {"marker": "B", "text": "Vitamin B12"}, {"marker": "C", "text": "Vitamin C"}, {"marker": "D", "text": "Vitamin D"}], "answerIndex": 1, "explanation": "Lactic Acid Bacteria (LAB) grow in milk and convert it into curd by coagulating and partially digesting milk proteins. LAB enriches its nutritional quality by synthesizing Vitamin B12 and also checks disease-causing microbes in our gut.", "num": 46}, {"topic": "Sewage Treatment & BOD", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Question Paper", "stem": "Biochemical Oxygen Demand (BOD) of polluted water is estimated by measuring the amount of ________.", "extras": [], "options": [{"marker": "A", "text": "Total organic matter"}, {"marker": "B", "text": "Oxygen evolution"}, {"marker": "C", "text": "Oxygen consumption"}, {"marker": "D", "text": "Biodegradable organic matter"}], "answerIndex": 2, "explanation": "The BOD test measures the rate of uptake (consumption) of oxygen by micro-organisms in a sample of water over an incubation period. Thus, indirectly, BOD is a measure of the organic matter present in the water.", "num": 47}, {"topic": "Biocontrol Agents", "tag": "KCET 2026", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2026 Biology Question Paper", "stem": "Given below are two statements:\nStatement I: Baculoviruses are pathogens that attack nematodes.\nStatement II: Baculoviruses are used as biological control agents in ecologically sensitive areas as they are species-specific in their action.\n\nIn the light of the above statements, choose the correct answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "Both Statement I and Statement II are true"}, {"marker": "B", "text": "Both Statement I and Statement II are false"}, {"marker": "C", "text": "Statement I is true, but Statement II is false"}, {"marker": "D", "text": "Statement I is false, but Statement II is true"}], "answerIndex": 3, "explanation": "Statement I is false because baculoviruses (genus Nucleopolyhedrovirus) are pathogens that attack insects and other arthropods, not nematodes. Statement II is true because they have species-specific, narrow spectrum insecticidal applications and have no negative impacts on non-target organisms.", "num": 48}, {"topic": "Chemicals & Bioactive Molecules", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Question Paper (Code B/A1)", "stem": "The drug prescribed to patients who have undergone organ transplant is ________ and is produced by ________.", "extras": [], "options": [{"marker": "A", "text": "Cyclosporin-A, Monascus purpureus"}, {"marker": "B", "text": "Statin, Monascus purpureus"}, {"marker": "C", "text": "Cyclosporin-A, Trichoderma polysporum"}, {"marker": "D", "text": "Statin, Trichoderma polysporum"}], "answerIndex": 2, "explanation": "Cyclosporin-A is an immunosuppressive agent used in organ-transplant patients to prevent graft rejection. It is produced by the filamentous fungus Trichoderma polysporum.", "num": 49}, {"topic": "Biocontrol Agents", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Question Paper (Code B/A1)", "stem": "Read the following statements and select the correct option:\nStatement I: Biocontrol refers to the use of biological methods for controlling plant diseases and pests.\nStatement II: Trichoderma species are effective biocontrol agents for several plant pathogens.", "extras": [], "options": [{"marker": "A", "text": "Statement I is correct and statement II is incorrect"}, {"marker": "B", "text": "Both statement I and statement II are incorrect"}, {"marker": "C", "text": "Statement I is incorrect but statement II is correct"}, {"marker": "D", "text": "Both statement I and statement II are correct"}], "answerIndex": 3, "explanation": "Both statements are verbatim from NCERT Class 12: Biocontrol refers to controlling pests via natural predation and biological antagonism, and Trichoderma is a common free-living root fungus that acts as an effective biocontrol agent against several plant pathogens.", "num": 50}, {"topic": "Microbes Overview & Applications", "tag": "KCET 2025", "sourceUrl": "https://cetonline.karnataka.gov.in/kea/", "sourceLabel": "KCET 2025 Biology Question Paper (Code B/A1)", "stem": "Match Column-I with Column-II and choose the correct option given below:\n\nColumn-I:\na) Streptococcus\nb) Penicillium\nc) Methanogens\nd) Anabaena\n\nColumn-II:\ni. Free living nitrogen fixing bacteria / cyanobacteria\nii. Clot buster\niii. Source of antibiotic\niv. Biogas production", "extras": [{"type": "table", "title": "Match Column-I with Column-II", "headers": ["Column-I", "Column-II"], "rows": [["a) Streptococcus", "ii. Clot buster"], ["b) Penicillium", "iii. Source of antibiotic"], ["c) Methanogens", "iv. Biogas production"], ["d) Anabaena", "i. Free living nitrogen fixing cyanobacteria"]]}], "options": [{"marker": "A", "text": "a - ii, b - iii, c - iv, d - i"}, {"marker": "B", "text": "a - ii, b - iv, c - iii, d - i"}, {"marker": "C", "text": "a - iv, b - iii, c - i, d - ii"}, {"marker": "D", "text": "a - iv, b - i, c - iii, d - ii"}], "answerIndex": 0, "explanation": "Streptococcus produces streptokinase (clot buster, a-ii); Penicillium produces the antibiotic penicillin (b-iii); Methanogens carry out biogas production (c-iv); Anabaena is an autotrophic nitrogen-fixing cyanobacterium (d-i).", "num": 51}];
+    const NEET_DATA = [{"num": 1, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper", "stem": "Match List I with List II:\n\nList I (Microbe)\nA. Aspergillus niger\nB. Acetobacter aceti\nC. Clostridium butylicum\nD. Lactobacillus\n\nList II (Commercial Product)\nI. Acetic acid\nII. Lactic acid\nIII. Citric acid\nIV. Butyric acid\n\nChoose the correct answer from the options given below:", "extras": [{"type": "table", "title": "Match List I with List II", "headers": ["List I (Microbe)", "List II (Commercial Product)"], "rows": [["A. Aspergillus niger", "I. Acetic acid"], ["B. Acetobacter aceti", "II. Lactic acid"], ["C. Clostridium butylicum", "III. Citric acid"], ["D. Lactobacillus", "IV. Butyric acid"]]}], "options": [{"marker": "A", "text": "A-III, B-I, C-IV, D-II"}, {"marker": "B", "text": "A-I, B-III, C-II, D-IV"}, {"marker": "C", "text": "A-III, B-IV, C-I, D-II"}, {"marker": "D", "text": "A-IV, B-II, C-III, D-I"}], "answerIndex": 0, "explanation": "According to NCERT Class 12 Chapter 8: Aspergillus niger (fungus) produces citric acid (A-III); Acetobacter aceti (bacterium) produces acetic acid (B-I); Clostridium butylicum (bacterium) produces butyric acid (C-IV); and Lactobacillus (bacterium) produces lactic acid (D-II)."}, {"num": 2, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper", "stem": "Which of the following bioactive molecules is used as an immunosuppressive agent in organ-transplant patients and from which organism is it produced?", "extras": [], "options": [{"marker": "A", "text": "Statins from Monascus purpureus"}, {"marker": "B", "text": "Cyclosporin A from Trichoderma polysporum"}, {"marker": "C", "text": "Streptokinase from Streptococcus"}, {"marker": "D", "text": "Citric acid from Aspergillus niger"}], "answerIndex": 1, "explanation": "Cyclosporin A, an immunosuppressive drug given to patients undergoing organ transplantation to prevent graft rejection, is produced by the fungus Trichoderma polysporum."}, {"num": 3, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "Statins, a bioactive molecule used as a blood-cholesterol lowering agent, acts by:", "extras": [], "options": [{"marker": "A", "text": "Hydrolysing circulating LDL and VLDL in hepatic portal veins"}, {"marker": "B", "text": "Competitively inhibiting the enzyme responsible for the synthesis of cholesterol"}, {"marker": "C", "text": "Dissolving blood clots in narrowed coronary arteries"}, {"marker": "D", "text": "Suppressing the proliferation of cytotoxic T-lymphocytes"}], "answerIndex": 1, "explanation": "Statins (produced by the yeast Monascus purpureus) lower blood cholesterol by acting as competitive inhibitors of HMG-CoA reductase, the rate-limiting enzyme responsible for de novo cholesterol synthesis in the liver."}, {"num": 4, "topic": "Sewage Treatment", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "During biological sewage treatment, what happens to Biochemical Oxygen Demand (BOD) and why?", "extras": [], "options": [{"marker": "A", "text": "BOD increases because anaerobic methanogens release gases"}, {"marker": "B", "text": "BOD increases because pathogens multiply rapidly in the aeration tank"}, {"marker": "C", "text": "BOD decreases significantly as aerobic flocs consume the organic matter in effluent"}, {"marker": "D", "text": "BOD remains unchanged while flocs sediment into the primary sludge"}], "answerIndex": 2, "explanation": "In the aeration tank of secondary sewage treatment, aerobic microbes grow into flocs and consume a major portion of the dissolved and suspended organic matter. This dramatically decreases the Biochemical Oxygen Demand (BOD) of the effluent."}, {"num": 5, "topic": "Biocontrol Agents", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "Which of the following is correctly matched regarding biocontrol agents for pest management?", "extras": [], "options": [{"marker": "A", "text": "Ladybird beetle &mdash; controls aphids"}, {"marker": "B", "text": "Dragonflies &mdash; control butterfly caterpillars"}, {"marker": "C", "text": "Bacillus thuringiensis &mdash; controls root-knot nematodes"}, {"marker": "D", "text": "Trichoderma &mdash; controls mosquitoes"}], "answerIndex": 0, "explanation": "NCERT Class 12 states: Ladybird beetles with red and black markings control aphids, whereas dragonflies are biocontrol predators used to eliminate mosquitoes."}, {"num": 6, "topic": "Biofertilisers", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "Which of the following statements about mycorrhiza is NOT correct?", "extras": [], "options": [{"marker": "A", "text": "Many members of the fungal genus Glomus form mycorrhizae"}, {"marker": "B", "text": "The fungal symbiont absorbs phosphorus from soil and passes it to the host plant"}, {"marker": "C", "text": "It provides the plant with enhanced resistance to root-borne pathogens and drought tolerance"}, {"marker": "D", "text": "It fixes atmospheric nitrogen symbiotically in root nodules of leguminous plants"}], "answerIndex": 3, "explanation": "Mycorrhiza is a fungal association (e.g. genus Glomus) that absorbs phosphorus, enhances pathogen resistance, and improves drought/salinity tolerance. It does NOT fix atmospheric nitrogen; symbiotic nitrogen fixation in legume root nodules is performed by the bacterium Rhizobium."}, {"num": 7, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "Streptokinase, used as a 'clot buster' to remove clots from the blood vessels of patients suffering from myocardial infarction, is obtained from:", "extras": [], "options": [{"marker": "A", "text": "Streptococcus"}, {"marker": "B", "text": "Staphylococcus"}, {"marker": "C", "text": "Trichoderma polysporum"}, {"marker": "D", "text": "Monascus purpureus"}], "answerIndex": 0, "explanation": "Streptokinase is produced by the bacterium Streptococcus and modified by genetic engineering. It is administered clinically as a 'clot buster' to dissolve intravascular thrombi in myocardial infarction patients."}, {"num": 8, "topic": "Biogas Production", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "Methanogenic bacteria grow anaerobically on cellulosic material and produce predominantly:", "extras": [], "options": [{"marker": "A", "text": "Methane along with carbon dioxide and hydrogen"}, {"marker": "B", "text": "Pure oxygen along with sulfur dioxide"}, {"marker": "C", "text": "Nitrogen dioxide and carbon monoxide"}, {"marker": "D", "text": "Chlorofluorocarbons and hydrogen peroxide"}], "answerIndex": 0, "explanation": "Methanogens (e.g., Methanobacterium) catabolize cellulosic substrates under strictly anaerobic conditions to generate biogas, which is composed predominantly of methane (CH4, 50-70%), carbon dioxide (CO2, 30-40%), and trace amounts of hydrogen (H2) and hydrogen sulphide (H2S)."}, {"num": 9, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2021 Question Paper", "stem": "Match Column I with Column II and select the correct option:\n\nColumn I\n(a) Aspergillus niger\n(b) Clostridium butylicum\n(c) Saccharomyces cerevisiae\n(d) Trichoderma polysporum\n\nColumn II\n(i) Butyric acid\n(ii) Cyclosporin A\n(iii) Citric acid\n(iv) Ethanol\n\nSelect the correct option:", "extras": [{"type": "table", "title": "Match Column I with Column II", "headers": ["Column I (Organism)", "Column II (Product)"], "rows": [["(a) Aspergillus niger", "(i) Butyric acid"], ["(b) Clostridium butylicum", "(ii) Cyclosporin A"], ["(c) Saccharomyces cerevisiae", "(iii) Citric acid"], ["(d) Trichoderma polysporum", "(iv) Ethanol"]]}], "options": [{"marker": "A", "text": "(a)-(iii), (b)-(i), (c)-(iv), (d)-(ii)"}, {"marker": "B", "text": "(a)-(i), (b)-(iii), (c)-(iv), (d)-(ii)"}, {"marker": "C", "text": "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)"}, {"marker": "D", "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"}], "answerIndex": 0, "explanation": "Aspergillus niger -> Citric acid (a-iii); Clostridium butylicum -> Butyric acid (b-i); Saccharomyces cerevisiae -> Ethanol (c-iv); Trichoderma polysporum -> Cyclosporin A (d-ii)."}, {"num": 10, "topic": "Biocontrol Agents", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2021 Question Paper", "stem": "Which of the following statements about Baculoviruses (genus Nucleopolyhedrovirus) is INCORRECT?", "extras": [], "options": [{"marker": "A", "text": "They attack insects and other arthropods"}, {"marker": "B", "text": "They have narrow-spectrum insecticidal applications"}, {"marker": "C", "text": "They have broad negative impacts on plants, mammals, birds, and fish"}, {"marker": "D", "text": "They are ideal for species-specific integrated pest management (IPM) programs"}], "answerIndex": 2, "explanation": "Baculoviruses of the genus Nucleopolyhedrovirus are pathogen-specific and narrow-spectrum. They have NO negative impacts on plants, mammals, birds, fish, or non-target beneficial insects, making statement C factually incorrect."}, {"num": 11, "topic": "Sewage Treatment", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Which of the following is put into the Anaerobic Sludge Digester during sewage treatment?", "extras": [], "options": [{"marker": "A", "text": "Primary sludge alone without filtration"}, {"marker": "B", "text": "Activated sludge settled from the secondary settling tank"}, {"marker": "C", "text": "Floating debris collected from physical sequential filtration"}, {"marker": "D", "text": "Effluent directly from the primary sedimentation tank"}], "answerIndex": 1, "explanation": "Once BOD is reduced in the aeration tank, the effluent passes into the settling tank where bacterial flocs sediment to form activated sludge. A small part is used as inoculum for the aeration tank, while the remaining major part is pumped into large tanks called anaerobic sludge digesters."}, {"num": 12, "topic": "Biofertilisers", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Which of the following organisms are autotrophic microbes that fix atmospheric nitrogen in paddy fields and serve as important biofertilisers?", "extras": [], "options": [{"marker": "A", "text": "Cyanobacteria such as Nostoc, Anabaena, and Oscillatoria"}, {"marker": "B", "text": "Mycorrhizal fungi like Glomus"}, {"marker": "C", "text": "Free-living heterotrophic bacteria like Azotobacter alone"}, {"marker": "D", "text": "Lactic acid bacteria (LAB)"}], "answerIndex": 0, "explanation": "Cyanobacteria (blue-green algae) are photosynthetic, autotrophic microorganisms widely distributed in aquatic and terrestrial habitats; in waterlogged paddy fields, Anabaena, Nostoc, and Oscillatoria fix nitrogen and add fertility-enriching organic matter."}, {"num": 13, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Match the following organisms with their commercial products:\n\n(A) Lactobacillus &mdash; (i) Cheese\n(B) Saccharomyces cerevisiae &mdash; (ii) Curd\n(C) Aspergillus niger &mdash; (iii) Citric acid\n(D) Acetobacter aceti &mdash; (iv) Bread\n\nSelect the correct option:", "extras": [{"type": "table", "title": "Match Organisms with Commercial Products", "headers": ["Organism", "Product"], "rows": [["(A) Lactobacillus", "(i) Cheese"], ["(B) Saccharomyces cerevisiae", "(ii) Curd"], ["(C) Aspergillus niger", "(iii) Citric acid"], ["(D) Acetobacter aceti", "(iv) Bread / Ethanol"]]}], "options": [{"marker": "A", "text": "(A)-(ii), (B)-(iv), (C)-(iii), (D)-(v) (where v is acetic acid)"}, {"marker": "B", "text": "(A)-(ii), (B)-(i), (C)-(iii), (D)-(iv)"}, {"marker": "C", "text": "(A)-(iii), (B)-(iv), (C)-(ii), (D)-(i)"}, {"marker": "D", "text": "(A)-(i), (B)-(iv), (C)-(iii), (D)-(ii)"}], "answerIndex": 0, "explanation": "Lactobacillus converts milk to curd (A-ii); Saccharomyces cerevisiae (Baker's yeast) ferments dough to make bread (B-iv); Aspergillus niger produces citric acid (C-iii); and Acetobacter aceti produces acetic acid."}, {"num": 14, "topic": "Biocontrol Agents", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "Which of the following is a commercial blood-cholesterol lowering agent?", "extras": [], "options": [{"marker": "A", "text": "Statin"}, {"marker": "B", "text": "Streptokinase"}, {"marker": "C", "text": "Lipase"}, {"marker": "D", "text": "Cyclosporin A"}], "answerIndex": 0, "explanation": "Statins, produced by the yeast Monascus purpureus, are commercial blood-cholesterol lowering agents that competitively inhibit HMG-CoA reductase."}, {"num": 15, "topic": "Sewage Treatment", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "What gases are produced in anaerobic sludge digesters during secondary sewage treatment?", "extras": [], "options": [{"marker": "A", "text": "Methane, Hydrogen Sulphide, and Carbon Dioxide"}, {"marker": "B", "text": "Methane, Oxygen, and Nitrogen Dioxide"}, {"marker": "C", "text": "Hydrogen Sulphide, Nitrogen, and Chlorine"}, {"marker": "D", "text": "Methane, Ethane, and Carbon Monoxide"}], "answerIndex": 0, "explanation": "In anaerobic sludge digesters, anaerobic bacteria digest the organic matter, flocs, and bacterial cells, releasing a mixture of gases known as biogas consisting of methane (CH4), hydrogen sulphide (H2S), and carbon dioxide (CO2)."}, {"num": 16, "topic": "Household Products", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "Which of the following can be used as a biocontrol agent in the treatment of plant diseases?", "extras": [], "options": [{"marker": "A", "text": "Trichoderma"}, {"marker": "B", "text": "Chlorella"}, {"marker": "C", "text": "Anabaena"}, {"marker": "D", "text": "Lactobacillus"}], "answerIndex": 0, "explanation": "Species of the fungus Trichoderma are free-living soil fungi that are very effective biocontrol agents against several plant root pathogens."}, {"num": 17, "topic": "Household Products", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2018 Question Paper", "stem": "The conversion of milk to curd improves its nutritional value by increasing the amount of:", "extras": [], "options": [{"marker": "A", "text": "Vitamin D"}, {"marker": "B", "text": "Vitamin A"}, {"marker": "C", "text": "Vitamin B12"}, {"marker": "D", "text": "Vitamin E"}], "answerIndex": 2, "explanation": "Lactic acid bacteria (LAB) multiply in milk, producing lactic acid that coagulates and partially digests milk proteins. In our stomach, LAB play very beneficial roles in checking disease-causing microbes and enrich nutritional quality by synthesizing Vitamin B12."}, {"num": 18, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2018 Question Paper", "stem": "Match the items in Column I with those in Column II:\n\nColumn I\n(a) Clostridium butylicum\n(b) Trichoderma polysporum\n(c) Monascus purpureus\n(d) Aspergillus niger\n\nColumn II\n(i) Cyclosporin A\n(ii) Butyric acid\n(iii) Citric acid\n(iv) Blood cholesterol lowering agent\n\nSelect the correct option:", "extras": [{"type": "table", "title": "Match Column I with Column II", "headers": ["Column I (Microbe)", "Column II (Product / Function)"], "rows": [["(a) Clostridium butylicum", "(i) Cyclosporin A"], ["(b) Trichoderma polysporum", "(ii) Butyric acid"], ["(c) Monascus purpureus", "(iii) Citric acid"], ["(d) Aspergillus niger", "(iv) Blood cholesterol lowering agent"]]}], "options": [{"marker": "A", "text": "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"}, {"marker": "B", "text": "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"}, {"marker": "C", "text": "(a)-(iv), (b)-(iii), (c)-(ii), (d)-(i)"}, {"marker": "D", "text": "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)"}], "answerIndex": 0, "explanation": "Clostridium butylicum produces butyric acid (a-ii); Trichoderma polysporum produces Cyclosporin A (b-i); Monascus purpureus produces statins for blood cholesterol lowering (c-iv); Aspergillus niger produces citric acid (d-iii)."}, {"num": 19, "topic": "Sewage Treatment", "tag": "NEET 2017", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2017 Question Paper", "stem": "Which of the following is correctly matched regarding sewage treatment?", "extras": [], "options": [{"marker": "A", "text": "Primary treatment &mdash; Biological process involving flocs"}, {"marker": "B", "text": "Secondary treatment &mdash; Physical removal of large and small particles through filtration and sedimentation"}, {"marker": "C", "text": "Activated sludge &mdash; Sediment of bacterial and fungal flocs settled in the settling tank"}, {"marker": "D", "text": "BOD &mdash; Measure of inorganic mineral content in polluted water"}], "answerIndex": 2, "explanation": "Activated sludge is the sediment formed in the secondary settling tank composed of bacterial masses mesh-associated with fungal filaments (flocs). Primary treatment is physical, secondary is biological, and BOD measures organic matter."}, {"num": 20, "topic": "Industrial Fermentations", "tag": "NEET 2016 Phase-I", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Phase 1 Paper", "stem": "Which of the following is wrongly matched in the given table?", "extras": [], "options": [{"marker": "A", "text": "Streptococcus &mdash; Streptokinase &mdash; Clot buster enzyme"}, {"marker": "B", "text": "Clostridium butylicum &mdash; Lipase &mdash; Removal of oil stains"}, {"marker": "C", "text": "Trichoderma polysporum &mdash; Cyclosporin A &mdash; Immunosuppressive drug"}, {"marker": "D", "text": "Monascus purpureus &mdash; Statins &mdash; Lowers blood cholesterol"}], "answerIndex": 1, "explanation": "Clostridium butylicum is a bacterium that produces butyric acid, not lipases. Lipases are isolated from Candida and other microbes and used in detergents."}, {"num": 21, "topic": "Household Products", "tag": "NEET 2016 Phase-II", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Phase 2 Paper", "stem": "Match Column I with Column II and select the correct option:\n\nColumn I\n(A) Citric acid\n(B) Cyclosporin A\n(C) Statins\n(D) Butyric acid\n\nColumn II\n(1) Trichoderma\n(2) Clostridium\n(3) Aspergillus\n(4) Monascus\n\nOptions:", "extras": [{"type": "table", "title": "Match Column I with Column II", "headers": ["Column I (Product)", "Column II (Microbe)"], "rows": [["(A) Citric acid", "(1) Trichoderma"], ["(B) Cyclosporin A", "(2) Clostridium"], ["(C) Statins", "(3) Aspergillus"], ["(D) Butyric acid", "(4) Monascus"]]}], "options": [{"marker": "A", "text": "A-3, B-1, C-4, D-2"}, {"marker": "B", "text": "A-1, B-4, C-2, D-3"}, {"marker": "C", "text": "A-3, B-1, C-2, D-4"}, {"marker": "D", "text": "A-2, B-3, C-4, D-1"}], "answerIndex": 0, "explanation": "Citric acid is produced by Aspergillus (A-3); Cyclosporin A by Trichoderma (B-1); Statins by Monascus (C-4); Butyric acid by Clostridium (D-2)."}, {"num": 22, "topic": "Biocontrol Agents", "tag": "NEET 2015", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT / NEET 2015 Paper", "stem": "A good producer of citric acid among the following is:", "extras": [], "options": [{"marker": "A", "text": "Aspergillus niger"}, {"marker": "B", "text": "Pseudomonas putida"}, {"marker": "C", "text": "Clostridium butylicum"}, {"marker": "D", "text": "Saccharomyces cerevisiae"}], "answerIndex": 0, "explanation": "Aspergillus niger, a filamentous ascomycete fungus, is widely cultured industrially for the large-scale production of citric acid."}, {"num": 23, "topic": "Industrial Fermentations", "tag": "AIPMT 2014", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2014 Question Paper", "stem": "Which of the following is commonly used as a bread-making leavening agent and brewing agent?", "extras": [], "options": [{"marker": "A", "text": "Saccharomyces cerevisiae"}, {"marker": "B", "text": "Pseudomonas fluorescens"}, {"marker": "C", "text": "Penicillium notatum"}, {"marker": "D", "text": "Streptococcus thermophilus"}], "answerIndex": 0, "explanation": "Saccharomyces cerevisiae is commonly known as Baker's yeast when used for fermenting dough to make bread, and Brewer's yeast when used for fermenting malted cereals and fruit juices to produce ethanol."}, {"num": 24, "topic": "Sewage Treatment", "tag": "AIPMT 2014", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2014 Question Paper", "stem": "High value of Biochemical Oxygen Demand (BOD) in a water body indicates that:", "extras": [], "options": [{"marker": "A", "text": "Water is highly polluted with organic matter"}, {"marker": "B", "text": "Water is completely clean and potable"}, {"marker": "C", "text": "Water contains high concentrations of heavy metals only"}, {"marker": "D", "text": "Microbial growth has been completely arrested"}], "answerIndex": 0, "explanation": "Biochemical Oxygen Demand (BOD) measures the amount of oxygen required by aerobic microbes to oxidize the organic matter in one litre of water. A higher BOD directly correlates with greater organic pollution."}, {"num": 25, "topic": "Biocontrol Agents", "tag": "AIPMT 2012 Mains", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Mains Paper", "stem": "Which of the following microbes is used for the commercial production of an immunosuppressive drug used in human organ transplantation?", "extras": [], "options": [{"marker": "A", "text": "Trichoderma polysporum"}, {"marker": "B", "text": "Monascus purpureus"}, {"marker": "C", "text": "Clostridium butylicum"}, {"marker": "D", "text": "Streptococcus"}], "answerIndex": 0, "explanation": "Trichoderma polysporum (a fungus) is cultured to extract Cyclosporin A, which acts as an essential immunosuppressive agent preventing organ rejection in transplant recipients."}, {"num": 26, "topic": "Household Products", "tag": "AIPMT 2012 Prelims", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Prelims Paper", "stem": "A patient brought to a hospital with myocardial infarction is normally immediately given:", "extras": [], "options": [{"marker": "A", "text": "Streptokinase"}, {"marker": "B", "text": "Cyclosporin A"}, {"marker": "C", "text": "Statins"}, {"marker": "D", "text": "Penicillin"}], "answerIndex": 0, "explanation": "A myocardial infarction (heart attack) is typically caused by a coronary thrombus (blood clot). Streptokinase is administered as an immediate thrombolytic 'clot buster' enzyme."}, {"num": 27, "topic": "Biocontrol Agents", "tag": "AIPMT 2012 Prelims", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Prelims Paper", "stem": "A nitrogen-fixing microbe associated with the aquatic fern Azolla in rice fields is:", "extras": [], "options": [{"marker": "A", "text": "Anabaena azollae"}, {"marker": "B", "text": "Spirulina"}, {"marker": "C", "text": "Frankia"}, {"marker": "D", "text": "Tolypothrix"}], "answerIndex": 0, "explanation": "Anabaena azollae is a symbiotic nitrogen-fixing cyanobacterium that lives within the leaf cavities of the water fern Azolla, widely cultivated as a biofertiliser in rice paddies."}, {"num": 28, "topic": "Biogas Production", "tag": "AIPMT 2011", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2011 Question Paper", "stem": "The domestic sewage in large cities:", "extras": [], "options": [{"marker": "A", "text": "Has high BOD because it contains both aerobic and anaerobic bacteria"}, {"marker": "B", "text": "Is processed by aerobic and then anaerobic bacteria in secondary treatment in Sewage Treatment Plants (STPs)"}, {"marker": "C", "text": "When treated in STPs does not require aeration"}, {"marker": "D", "text": "Has very low BOD due to dilution"}], "answerIndex": 1, "explanation": "Municipal sewage treatment in STPs employs aerobic bacteria and fungi in aeration tanks during secondary treatment, followed by digestion of the settled flocs in anaerobic sludge digesters."}, {"num": 29, "topic": "Biofertilisers", "tag": "AIPMT 2011", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2011 Question Paper", "stem": "An organism used as a biofertilizer for raising soybean crops is:", "extras": [], "options": [{"marker": "A", "text": "Rhizobium"}, {"marker": "B", "text": "Nostoc"}, {"marker": "C", "text": "Azotobacter"}, {"marker": "D", "text": "Azospirillum"}], "answerIndex": 0, "explanation": "Soybean (Glycine max) is a leguminous plant whose root nodules form symbiotic relationships with the nitrogen-fixing bacterium Rhizobium (specifically Bradyrhizobium japonicum)."}, {"num": 30, "topic": "Household Products", "tag": "AIPMT 2010", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2010 Question Paper", "stem": "Which one of the following is NOT used in organic farming?", "extras": [], "options": [{"marker": "A", "text": "Glomus"}, {"marker": "B", "text": "Earthworm"}, {"marker": "C", "text": "Oscillatoria"}, {"marker": "D", "text": "Snail"}], "answerIndex": 3, "explanation": "Glomus (mycorrhiza), earthworms (vermicompost), and Oscillatoria (cyanobacterial biofertiliser) are integral to organic farming, whereas snails are common agricultural pests rather than bio-inputs."}, {"num": 31, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper", "stem": "Given below are two statements:\nStatement I: Lipases are added to detergent formulations and are helpful in removing oily stains from laundry.\nStatement II: Bottled fruit juices are clarified by using pectinases and proteases.\n\nIn the light of the above statements, choose the most appropriate answer:", "extras": [], "options": [{"marker": "A", "text": "Both Statement I and Statement II are correct"}, {"marker": "B", "text": "Both Statement I and Statement II are incorrect"}, {"marker": "C", "text": "Statement I is correct but Statement II is incorrect"}, {"marker": "D", "text": "Statement I is incorrect but Statement II is correct"}], "answerIndex": 0, "explanation": "Both statements are direct NCERT facts: microbial lipases are formulated into laundry detergents to dissolve oils, and bottled juices are clarified commercially using pectinases and proteases."}, {"num": 32, "topic": "Industrial Fermentations", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "Alexander Fleming discovered penicillin while working on which of the following pathogenic bacteria?", "extras": [], "options": [{"marker": "A", "text": "Staphylococci"}, {"marker": "B", "text": "Streptococci"}, {"marker": "C", "text": "Bacillus subtilis"}, {"marker": "D", "text": "Salmonella typhi"}], "answerIndex": 0, "explanation": "Alexander Fleming was working on Staphylococci bacteria when he observed a mould (Penicillium notatum) growing on an unwashed culture plate around which Staphylococci could not grow."}, {"num": 33, "topic": "Industrial Fermentations", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "The full therapeutic potential of penicillin as an effective antibiotic was subsequently established by:", "extras": [], "options": [{"marker": "A", "text": "Ernest Chain and Howard Florey"}, {"marker": "B", "text": "Alexander Fleming alone"}, {"marker": "C", "text": "Louis Pasteur and Robert Koch"}, {"marker": "D", "text": "Edward Jenner and Antonie van Leeuwenhoek"}], "answerIndex": 0, "explanation": "While Alexander Fleming discovered penicillin, its full potential as an effective antibiotic was established by Ernest Chain and Howard Florey, who shared the 1945 Nobel Prize with Fleming."}, {"num": 34, "topic": "Sewage Treatment", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2021 Question Paper", "stem": "In sewage treatment, flocs are composed of:", "extras": [], "options": [{"marker": "A", "text": "Masses of bacteria associated with fungal filaments to form mesh-like structures"}, {"marker": "B", "text": "Colonies of methanogenic bacteria producing methane"}, {"marker": "C", "text": "Heavy metals bonded to suspended grit particles"}, {"marker": "D", "text": "Anaerobic yeasts fermenting sugars to carbon dioxide"}], "answerIndex": 0, "explanation": "NCERT explicitly defines flocs as 'masses of bacteria associated with fungal filaments to form mesh-like structures' that multiply rapidly in aeration tanks under vigorous agitation."}, {"num": 35, "topic": "Biocontrol Agents", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Bacillus thuringiensis (Bt) strains have been used for designing novel:", "extras": [], "options": [{"marker": "A", "text": "Bioinsecticidal plants"}, {"marker": "B", "text": "Biofertilisers for phosphorus uptake"}, {"marker": "C", "text": "Bio-mineralization agents for sewage"}, {"marker": "D", "text": "Bio-preservatives for dairy products"}], "answerIndex": 0, "explanation": "Bacillus thuringiensis produces crystalline endotoxins (Cry proteins) toxic to insect larvae. Genetically engineered crops expressing Bt endotoxin genes (e.g. Bt cotton, Bt corn) serve as bioinsecticidal plants."}, {"num": 36, "topic": "Biogas Production", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "In a biogas plant, the concrete tank in which bio-wastes are collected and slurry of dung is fed is approximately how deep?", "extras": [], "options": [{"marker": "A", "text": "10 to 15 feet"}, {"marker": "B", "text": "2 to 3 feet"}, {"marker": "C", "text": "25 to 30 feet"}, {"marker": "D", "text": "50 to 60 feet"}], "answerIndex": 0, "explanation": "According to NCERT Class 12 Chapter 8, the biogas plant consists of a concrete tank (10-15 feet deep) in which bio-wastes are collected and a slurry of dung is fed."}, {"num": 37, "topic": "Household Products", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2018 Question Paper", "stem": "The dough used for making foods such as dosa and idli is fermented by:", "extras": [], "options": [{"marker": "A", "text": "Bacteria producing CO2"}, {"marker": "B", "text": "Yeast producing lactic acid"}, {"marker": "C", "text": "Protozoans consuming starch"}, {"marker": "D", "text": "Viruses lysing plant cells"}], "answerIndex": 0, "explanation": "The dough used for making idli and dosa is fermented by bacteria (such as Leuconostoc mesenteroides and Streptococcus faecalis), where production of CO2 gas causes the characteristic puffed-up appearance."}, {"num": 38, "topic": "Household Products", "tag": "NEET 2017", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2017 Question Paper", "stem": "Which of the following is responsible for the ripening of Roquefort cheese?", "extras": [], "options": [{"marker": "A", "text": "Penicillium roqueforti (fungus)"}, {"marker": "B", "text": "Propionibacterium sharmanii (bacterium)"}, {"marker": "C", "text": "Lactobacillus acidophilus"}, {"marker": "D", "text": "Streptococcus lactis"}], "answerIndex": 0, "explanation": "Roquefort cheese is ripened by cultivating a specific fungus, Penicillium roqueforti, on it, which imparts its distinct bluish veins and unique pungent flavour."}, {"num": 39, "topic": "Biofertilisers", "tag": "NEET 2016 Phase-I", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Phase 1 Paper", "stem": "Which one of the following pairs of microorganisms are free-living nitrogen fixers in soil?", "extras": [], "options": [{"marker": "A", "text": "Azotobacter and Azospirillum"}, {"marker": "B", "text": "Rhizobium and Frankia"}, {"marker": "C", "text": "Glomus and Trichoderma"}, {"marker": "D", "text": "Streptococcus and Lactobacillus"}], "answerIndex": 0, "explanation": "Azotobacter and Azospirillum are free-living soil bacteria capable of fixing atmospheric nitrogen into ammonium, enriching soil nitrogen without establishing symbiotic root nodules."}, {"num": 40, "topic": "Biocontrol Agents", "tag": "NEET 2015", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT / NEET 2015 Paper", "stem": "Why are baculoviruses highly desirable for biological pest control in sensitive ecosystems?", "extras": [], "options": [{"marker": "A", "text": "They exhibit species-specific, narrow spectrum activity with zero toxicity to mammals, birds, and non-target insects"}, {"marker": "B", "text": "They eradicate all arthropods indiscriminately within a 10 km radius"}, {"marker": "C", "text": "They act as broad-spectrum persistent organochlorines in topsoil"}, {"marker": "D", "text": "They stimulate aggressive weed growth to smother insect pests"}], "answerIndex": 0, "explanation": "Baculoviruses (genus Nucleopolyhedrovirus) exhibit strict species-specificity and narrow insecticidal spectra, ensuring no collateral damage to beneficial predatory insects, pollinators, or wildlife."}, {"num": 41, "topic": "Sewage Treatment", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper", "stem": "In the context of the Ganga Action Plan and Yamuna Action Plan initiated by the Ministry of Environment and Forests, what was the primary objective?", "extras": [], "options": [{"marker": "A", "text": "To build a large number of sewage treatment plants (STPs) so only treated sewage is discharged into rivers"}, {"marker": "B", "text": "To divert all river water exclusively into agricultural canals"}, {"marker": "C", "text": "To eradicate all aquatic flora and fauna from river beds"}, {"marker": "D", "text": "To replace municipal sewage networks with chemical incineration plants"}], "answerIndex": 0, "explanation": "The Ministry of Environment and Forests initiated the Ganga and Yamuna Action Plans to construct major sewage treatment plants so that massive volumes of city sewage could be treated biologically before entering these sacred rivers."}, {"num": 42, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "Which of the following organic acids is produced by the bacterium Acetobacter aceti?", "extras": [], "options": [{"marker": "A", "text": "Acetic acid"}, {"marker": "B", "text": "Citric acid"}, {"marker": "C", "text": "Lactic acid"}, {"marker": "D", "text": "Butyric acid"}], "answerIndex": 0, "explanation": "Acetobacter aceti is an obligate aerobic bacterium that oxidizes ethanol into acetic acid (vinegar)."}, {"num": 43, "topic": "Industrial Fermentations", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "Which of the following alcoholic beverages are produced by distillation of fermented broth?", "extras": [], "options": [{"marker": "A", "text": "Whisky, Brandy, and Rum"}, {"marker": "B", "text": "Wine and Beer"}, {"marker": "C", "text": "Beer and Cider"}, {"marker": "D", "text": "Wine and Port"}], "answerIndex": 0, "explanation": "While wine and beer are prepared without distillation (yielding lower alcohol percentages), whisky, brandy, and rum are produced by distilling the fermented broth to concentrate alcohol levels."}, {"num": 44, "topic": "Sewage Treatment", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2021 Question Paper", "stem": "What is the role of the small part of activated sludge pumped back into the aeration tank?", "extras": [], "options": [{"marker": "A", "text": "It acts as an inoculum (starter culture) to seed the aerobic flocs"}, {"marker": "B", "text": "It serves as food for anaerobic methanogens"}, {"marker": "C", "text": "It coagulates suspended soil grit during primary sedimentation"}, {"marker": "D", "text": "It neutralizes chemical acidity in the effluent"}], "answerIndex": 0, "explanation": "A small portion of the activated sludge settled in the secondary tank is pumped back into the aeration tank to serve as the inoculum (starter), replenishing the active population of aerobic flocs."}, {"num": 45, "topic": "Biogas Production", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Which of the following raw materials is the primary feedstock utilized in Indian rural gobar gas plants?", "extras": [], "options": [{"marker": "A", "text": "Cattle dung (gobar) mixed with water to form a slurry"}, {"marker": "B", "text": "Refined petroleum waxes"}, {"marker": "C", "text": "Synthetic plastics and rubber"}, {"marker": "D", "text": "Sterilized municipal drinking water"}], "answerIndex": 0, "explanation": "Cattle dung (locally called 'gobar') is rich in cellulose-digesting methanogenic bacteria from the bovine rumen; mixed with water into slurry, it forms the ideal feedstock for rural biogas plants."}, {"num": 46, "topic": "Biofertilisers", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "Which of the following benefits is conferred onto plants by mycorrhizal fungal associations?", "extras": [], "options": [{"marker": "A", "text": "Absorption of phosphorus from soil"}, {"marker": "B", "text": "Resistance to root-borne pathogens"}, {"marker": "C", "text": "Tolerance to salinity and drought"}, {"marker": "D", "text": "All of the above"}], "answerIndex": 3, "explanation": "NCERT explicitly highlights all three advantages: Glomus mycorrhizae absorb phosphorus, provide resistance to root-borne fungal pathogens, confer tolerance against drought and salinity, and stimulate overall plant growth."}, {"num": 47, "topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2018", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2018 Question Paper", "stem": "The microorganism utilized for industrial synthesis of butyric acid is:", "extras": [], "options": [{"marker": "A", "text": "Clostridium butylicum (bacterium)"}, {"marker": "B", "text": "Aspergillus niger (fungus)"}, {"marker": "C", "text": "Acetobacter aceti (bacterium)"}, {"marker": "D", "text": "Lactobacillus (bacterium)"}], "answerIndex": 0, "explanation": "Clostridium butylicum is an obligately anaerobic, spore-forming bacterium responsible for the commercial production of butyric acid."}, {"num": 48, "topic": "Household Products", "tag": "NEET 2017", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2017 Question Paper", "stem": "The large holes in Swiss cheese are created by:", "extras": [], "options": [{"marker": "A", "text": "Propionibacterium sharmanii producing large amounts of CO2"}, {"marker": "B", "text": "Penicillium roqueforti releasing nitrogen gas"}, {"marker": "C", "text": "Mechanical drilling during packaging"}, {"marker": "D", "text": "Thermal decomposition of lactic acid into methane"}], "answerIndex": 0, "explanation": "The large characteristic holes (eyes) in Swiss cheese are produced due to carbon dioxide gas released during the fermentation carried out by Propionibacterium sharmanii."}, {"num": 49, "topic": "Biocontrol Agents", "tag": "NEET 2016 Phase-II", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2016 Phase 2 Paper", "stem": "Which of the following organisms is used as a biofertiliser in waterlogged rice soils?", "extras": [], "options": [{"marker": "A", "text": "Anabaena"}, {"marker": "B", "text": "Rhizobium"}, {"marker": "C", "text": "Frankia"}, {"marker": "D", "text": "Clostridium"}], "answerIndex": 0, "explanation": "Anabaena is a photosynthetic nitrogen-fixing cyanobacterium that flourishes in flooded paddy soils, either free-living or symbiotically with the water fern Azolla."}, {"num": 50, "topic": "Sewage Treatment", "tag": "AIPMT 2015", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2015 Question Paper", "stem": "Primary treatment of municipal wastewater involves:", "extras": [], "options": [{"marker": "A", "text": "Physical removal of floating and suspended particles through sequential filtration and sedimentation"}, {"marker": "B", "text": "Aerobic oxidation of organic matter by flocs"}, {"marker": "C", "text": "Digestion of bacterial cells in anaerobic sludge tanks"}, {"marker": "D", "text": "Chlorination and UV irradiation to sterilize pathogens"}], "answerIndex": 0, "explanation": "Primary treatment is strictly a physical process where large floating debris is removed by sequential filtration through wire mesh screens, and grit (soil and small pebbles) is removed by settling in sedimentation tanks."}, {"num": 51, "topic": "Industrial Fermentations", "tag": "AIPMT 2014", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2014 Question Paper", "stem": "Yeast is utilized in bakeries to produce spongy bread because during anaerobic fermentation:", "extras": [], "options": [{"marker": "A", "text": "Carbon dioxide gas is released, causing dough to rise and form pores"}, {"marker": "B", "text": "Oxygen gas is consumed, making the dough compact"}, {"marker": "C", "text": "Lactic acid is deposited, hardening the crust"}, {"marker": "D", "text": "Lipids are synthesized, making the bread waterproof"}], "answerIndex": 0, "explanation": "Baker's yeast (Saccharomyces cerevisiae) ferments sugars anaerobically, liberating carbon dioxide (CO2) bubbles. As gas bubbles expand during baking, they create the light, spongy texture characteristic of leavened bread."}, {"num": 52, "topic": "Chemicals & Bioactive Molecules", "tag": "AIPMT 2013", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET / AIPMT 2013 Paper", "stem": "A patient with elevated serum cholesterol is advised by a cardiologist to take a natural fungal product. The product and its biological source are:", "extras": [], "options": [{"marker": "A", "text": "Statins from Monascus purpureus"}, {"marker": "B", "text": "Cyclosporin A from Trichoderma polysporum"}, {"marker": "C", "text": "Streptokinase from Streptococcus"}, {"marker": "D", "text": "Penicillin from Penicillium chrysogenum"}], "answerIndex": 0, "explanation": "Statins obtained from the red yeast Monascus purpureus act as competitive inhibitors of HMG-CoA reductase, thereby lowering endogenous blood cholesterol levels."}, {"num": 53, "topic": "Biocontrol Agents", "tag": "AIPMT 2012 Mains", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2012 Mains Paper", "stem": "Which of the following is an example of a microbial biocontrol agent used against caterpillar larvae of butterfly pests?", "extras": [], "options": [{"marker": "A", "text": "Bacillus thuringiensis dried spores sprayed onto brassica crops"}, {"marker": "B", "text": "Trichoderma polysporum in root systems"}, {"marker": "C", "text": "Glomus mycorrhizae in cereal roots"}, {"marker": "D", "text": "Azotobacter in sandy soils"}], "answerIndex": 0, "explanation": "Sachets of dried spores of Bacillus thuringiensis (Bt) are mixed with water and sprayed onto brassicas and fruit trees. When butterfly larvae eat the leaves, the alkaline pH in their gut solubilizes the endotoxin, which perforates the midgut and kills the caterpillar."}, {"num": 54, "topic": "Biogas Production", "tag": "AIPMT 2010", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2010 Question Paper", "stem": "The main gas produced in a biogas plant by methanogens during anaerobic decomposition is:", "extras": [], "options": [{"marker": "A", "text": "Methane (CH4)"}, {"marker": "B", "text": "Carbon monoxide (CO)"}, {"marker": "C", "text": "Sulphur dioxide (SO2)"}, {"marker": "D", "text": "Nitrous oxide (N2O)"}], "answerIndex": 0, "explanation": "Biogas consists predominantly of methane (50-70%), which makes it an excellent, clean, non-polluting combustible fuel for rural lighting and cooking."}, {"num": 55, "topic": "Biofertilisers", "tag": "AIPMT 2008", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "AIPMT 2008 Question Paper", "stem": "Which of the following is a non-symbiotic (free-living) aerobic bacterium that fixes atmospheric nitrogen in soil?", "extras": [], "options": [{"marker": "A", "text": "Azotobacter"}, {"marker": "B", "text": "Rhizobium"}, {"marker": "C", "text": "Frankia"}, {"marker": "D", "text": "Anabaena"}], "answerIndex": 0, "explanation": "Azotobacter is a free-living aerobic bacterium that fixes molecular nitrogen in arable soils, enhancing available nitrates for crops without forming symbiotic nodular tissues."}, {"topic": "Biofertilisers", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Narmada 48)", "stem": "Which of the following organisms CANNOT fix atmospheric nitrogen?\nA. Azotobacter\nB. Oscillatoria\nC. Anabaena\nD. Volvox\nE. Nostoc\n\nChoose the correct answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "B only"}, {"marker": "B", "text": "E only"}, {"marker": "C", "text": "A only"}, {"marker": "D", "text": "D only"}], "answerIndex": 3, "explanation": "Cyanobacteria such as Anabaena, Nostoc, and Oscillatoria are photosynthetic N2-fixing organisms. Azotobacter is a free-living N2-fixing soil bacterium. Volvox is a colonial green alga (chlorophyte) and cannot fix nitrogen.", "num": 56}, {"topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Narmada 48)", "stem": "Streptokinase produced by the bacterium Streptococcus is used for:", "extras": [], "options": [{"marker": "A", "text": "Liver disease treatment"}, {"marker": "B", "text": "Removing clots from blood vessels"}, {"marker": "C", "text": "Curd production"}, {"marker": "D", "text": "Ethanol production"}], "answerIndex": 1, "explanation": "Streptokinase is produced by Streptococcus and modified by genetic engineering. It is used as a 'clot buster' to remove thrombi (blood clots) from the blood vessels of patients who have undergone myocardial infarction.", "num": 57}, {"topic": "Household Products", "tag": "NEET 2025", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET 2025 Biology Paper (Narmada 48)", "stem": "Which of the following microbes is NOT involved in the preparation of household products?\nA. Aspergillus niger\nB. Lactobacillus\nC. Trichoderma polysporum\nD. Saccharomyces cerevisiae\nE. Propionibacterium sharmanii\n\nChoose the correct answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "C and D only"}, {"marker": "B", "text": "C and E only"}, {"marker": "C", "text": "A and B only"}, {"marker": "D", "text": "A and C only"}], "answerIndex": 3, "explanation": "Aspergillus niger is an industrial producer of citric acid, and Trichoderma polysporum is used to produce the immunosuppressant drug Cyclosporin-A. Both are industrial/medical microbes, whereas Lactobacillus, S. cerevisiae, and P. sharmanii are used in household foods.", "num": 58}, {"topic": "Chemicals & Bioactive Molecules", "tag": "Re-NEET 2026", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) Re-Examination Question Paper (Code 50)", "stem": "Which of the following is used as an effective clot buster for patients suffering from acute myocardial infarction?", "extras": [], "options": [{"marker": "A", "text": "Streptokinase"}, {"marker": "B", "text": "Penicillin"}, {"marker": "C", "text": "Cyclosporin A"}, {"marker": "D", "text": "Statins"}], "answerIndex": 0, "explanation": "Streptokinase, produced by Streptococcus and modified by genetic engineering, is a thrombolytic enzyme used as a clot buster. Penicillin is an antibiotic, Cyclosporin A is an immunosuppressant, and Statins lower cholesterol.", "num": 59}, {"topic": "Household Products", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper (Code 12 Kailash)", "stem": "What is the reason behind the production of large holes in 'Swiss Cheese'?", "extras": [], "options": [{"marker": "A", "text": "The production of large amount of CO2 by Clostridium butylicum"}, {"marker": "B", "text": "The production of large amount of CO2 and H2 by Trichoderma polysporum"}, {"marker": "C", "text": "The production of large amount of CO2 and H2 by lactic acid bacteria called Lactobacillus"}, {"marker": "D", "text": "The production of large amount of CO2 by Propionibacterium sharmanii"}], "answerIndex": 3, "explanation": "The large holes ('eyes') in Swiss cheese are created by the release of large volumes of carbon dioxide (CO2) during ripening by the bacterium Propionibacterium sharmanii.", "num": 60}, {"topic": "Sewage Treatment & BOD", "tag": "NTA Biology 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology National Examination (Code 304 E)", "stem": "In biological sewage treatment, flocs are:", "extras": [], "options": [{"marker": "A", "text": "The solids that settle during sedimentation"}, {"marker": "B", "text": "The supernatant that is formed above the primary sludge"}, {"marker": "C", "text": "The masses of bacteria associated with fungal filaments to form mesh-like structures"}, {"marker": "D", "text": "The bacteria which grow anaerobically and are called anaerobic sludge digesters"}], "answerIndex": 2, "explanation": "In secondary sewage treatment, aerobic microorganisms multiply in the aeration tank forming flocs\u2014masses of bacteria associated with fungal filaments to form mesh-like structures that digest organic matter.", "num": 61}, {"topic": "Chemicals & Bioactive Molecules", "tag": "NTA Biology 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology National Examination (Code 304 E)", "stem": "Match List-I with List-II:\n\nList-I (Products):\nA. Statin\nB. Clot buster\nC. Swiss cheese\nD. Cyclosporin-A\n\nList-II (Organisms):\nI. Streptococcus\nII. Trichoderma\nIII. Monascus\nIV. Propionibacterium\n\nChoose the correct answer from the options given below:", "extras": [{"type": "table", "title": "Match List-I with List-II", "headers": ["List-I (Product)", "List-II (Organism)"], "rows": [["A. Statin", "III. Monascus"], ["B. Clot buster", "I. Streptococcus"], ["C. Swiss cheese", "IV. Propionibacterium"], ["D. Cyclosporin-A", "II. Trichoderma"]]}], "options": [{"marker": "A", "text": "(A) - (II), (B) - (I), (C) - (IV), (D) - (III)"}, {"marker": "B", "text": "(A) - (III), (B) - (I), (C) - (IV), (D) - (II)"}, {"marker": "C", "text": "(A) - (III), (B) - (IV), (C) - (II), (D) - (I)"}, {"marker": "D", "text": "(A) - (II), (B) - (III), (C) - (I), (D) - (IV)"}], "answerIndex": 1, "explanation": "Statin is produced by the yeast Monascus purpureus (A-III); Clot buster (streptokinase) by Streptococcus (B-I); Swiss cheese is ripened by Propionibacterium sharmanii (C-IV); Cyclosporin-A is produced by the fungus Trichoderma polysporum (D-II).", "num": 62}, {"topic": "Biocontrol Agents", "tag": "NTA Biology 304 E", "sourceUrl": "https://nta.ac.in/", "sourceLabel": "NTA Biology National Examination (Code 304 E)", "stem": "The beetle used as a biocontrol agent for aphids is:", "extras": [], "options": [{"marker": "A", "text": "Trichoderma"}, {"marker": "B", "text": "Dragonflies"}, {"marker": "C", "text": "Ladybird"}, {"marker": "D", "text": "Silver fish"}], "answerIndex": 2, "explanation": "The Ladybird beetle (with red and black markings) is a natural predator used as a biocontrol agent to eliminate aphids. Dragonflies are used to control mosquitoes.", "num": 63}, {"topic": "Household Products", "tag": "NEET 2024", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2024 Question Paper", "stem": "Which of the following statements about lactic acid bacteria (LAB) is INCORRECT?", "extras": [], "options": [{"marker": "A", "text": "They produce acids that coagulate and partially digest milk proteins"}, {"marker": "B", "text": "A small amount of curd added to fresh milk acts as an inoculum or starter containing millions of LAB"}, {"marker": "C", "text": "They reduce the nutritional quality of milk by destroying Vitamin B12"}, {"marker": "D", "text": "In human stomach, they play a beneficial role in checking disease-causing microbes"}], "answerIndex": 2, "explanation": "Statement C is incorrect because LAB in fact improves the nutritional quality of curd by increasing Vitamin B12.", "num": 64}, {"topic": "Sewage Treatment & BOD", "tag": "NEET 2023", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2023 Question Paper", "stem": "The technology of microbial treatment of sewage has been practiced for more than a century across the globe. Which of the following is true regarding this method?", "extras": [], "options": [{"marker": "A", "text": "Modern physical nanofiltration has completely replaced microbial sewage treatment"}, {"marker": "B", "text": "Till date, no man-made technology has been able to rival the microbial treatment of sewage"}, {"marker": "C", "text": "Secondary treatment is purely physical while primary treatment is microbial"}, {"marker": "D", "text": "Microbial sewage treatment releases toxic chemical organophosphates"}], "answerIndex": 1, "explanation": "NCERT Class 12 states: 'This methodology has been practiced for more than a century now, in almost all parts of the world. Till date, no man-made technology has been able to rival the microbial treatment of sewage.'", "num": 65}, {"topic": "Biocontrol Agents", "tag": "NEET 2022", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2022 Question Paper", "stem": "In an Integrated Pest Management (IPM) programme, why are baculoviruses highly recommended?", "extras": [], "options": [{"marker": "A", "text": "Because they eradicate all insect species from the ecosystem completely"}, {"marker": "B", "text": "Because they have species-specific, narrow spectrum insecticidal actions with no harm to beneficial non-target insects"}, {"marker": "C", "text": "Because they are broad-spectrum persistent organochlorines"}, {"marker": "D", "text": "Because they act as synthetic chemical weedicides"}], "answerIndex": 1, "explanation": "Baculoviruses (genus Nucleopolyhedrovirus) are species-specific and narrow-spectrum, causing no harm to non-target organisms (plants, mammals, birds, fish, or beneficial insects), which is essential in IPM.", "num": 66}, {"topic": "Biofertilisers", "tag": "NEET 2021", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2021 Question Paper", "stem": "A farmer observes phosphorus deficiency in his soil despite adding nitrogenous fertilisers. Inoculating the crops with which of the following biofertilisers would enhance phosphorus absorption?", "extras": [], "options": [{"marker": "A", "text": "Rhizobium"}, {"marker": "B", "text": "Glomus (Mycorrhiza)"}, {"marker": "C", "text": "Azotobacter"}, {"marker": "D", "text": "Lactobacillus"}], "answerIndex": 1, "explanation": "Many members of the fungal genus Glomus form mycorrhizal symbiotic associations with plant roots, absorbing phosphorus from the soil and passing it to the host plant.", "num": 67}, {"topic": "Biogas Production", "tag": "NEET 2020", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2020 Question Paper", "stem": "Methanobacterium is found in which of the following environments?\nA. Anaerobic sludge digesters of STPs\nB. Rumen of cattle\nC. Waterlogged anaerobic cellulosic waste\nD. Aeration tanks of STPs\n\nChoose the correct combination:", "extras": [], "options": [{"marker": "A", "text": "A, B and C only"}, {"marker": "B", "text": "B and D only"}, {"marker": "C", "text": "A and D only"}, {"marker": "D", "text": "D only"}], "answerIndex": 0, "explanation": "Methanogens are strictly anaerobic bacteria present in anaerobic sludge digesters, the rumen of cattle, and cellulosic marshy wastes. They cannot survive in aerobic aeration tanks.", "num": 68}, {"topic": "Industrial Fermentations", "tag": "NEET 2019", "sourceUrl": "https://neet.nta.nic.in/", "sourceLabel": "NEET (UG) 2019 Question Paper", "stem": "Which of the following organic acids is correctly paired with its source organism and biological nature?", "extras": [], "options": [{"marker": "A", "text": "Citric acid &mdash; Aspergillus niger &mdash; Fungus"}, {"marker": "B", "text": "Acetic acid &mdash; Acetobacter aceti &mdash; Fungus"}, {"marker": "C", "text": "Butyric acid &mdash; Clostridium butylicum &mdash; Yeast"}, {"marker": "D", "text": "Lactic acid &mdash; Lactobacillus &mdash; Protozoan"}], "answerIndex": 0, "explanation": "Citric acid is produced by Aspergillus niger (a fungus). Acetobacter aceti and Clostridium butylicum and Lactobacillus are all bacteria.", "num": 69}, {"topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2026 (Re-Exam)", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev & NTA NEET 2026 Re-Examination", "stem": "Which of the following is used as an effective sedative and painkiller for treating post-surgery patients?", "extras": [], "options": [{"marker": "A", "text": "Interferon"}, {"marker": "B", "text": "Antibiotics"}, {"marker": "C", "text": "Morphine"}, {"marker": "D", "text": "Anti-retroviral drugs"}], "answerIndex": 2, "explanation": "Morphine (an opioid analgesic extracted from the latex of Papaver somniferum) is a highly effective sedative and painkiller widely administered to patients who have undergone surgery to manage post-operative pain.", "num": 70}, {"topic": "Chemicals & Bioactive Molecules", "tag": "NEET 2026 (Cancelled Exam)", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2026 Question Archive", "stem": "Match List-I with List-II:\n\nList-I (Bioactive Molecule / Enzyme):\n(A) Streptokinase\n(B) Statins\n(C) Lipases\n(D) Cyclosporin A\n\nList-II (Clinical / Commercial Application):\n(I) Immunosuppressive agent\n(II) Removal of clots from the blood vessels\n(III) Blood cholesterol-lowering agent\n(IV) Detergent formulations\n\nChoose the correct answer from the options given below:", "extras": [{"type": "table", "title": "Match List-I with List-II", "headers": ["List-I (Bioactive Molecule / Enzyme)", "List-II (Application)"], "rows": [["(A) Streptokinase", "(II) Removal of clots from the blood vessels"], ["(B) Statins", "(III) Blood cholesterol-lowering agent"], ["(C) Lipases", "(IV) Detergent formulations"], ["(D) Cyclosporin A", "(I) Immunosuppressive agent"]]}], "options": [{"marker": "A", "text": "A-II, B-III, C-IV, D-I"}, {"marker": "B", "text": "A-IV, B-III, C-II, D-I"}, {"marker": "C", "text": "A-II, B-III, C-I, D-IV"}, {"marker": "D", "text": "A-III, B-II, C-IV, D-I"}], "answerIndex": 0, "explanation": "Streptokinase removes intravascular blood clots in myocardial infarction patients (A-II); Statins lower blood cholesterol by inhibiting HMG-CoA reductase (B-III); Lipases are used in detergents to remove oily stains (C-IV); Cyclosporin A is an immunosuppressive drug used in organ-transplant recipients (D-I).", "num": 71}, {"topic": "Industrial Fermentations & Beverages", "tag": "NEET 2025", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2025 Biology Paper", "stem": "Which of the following is an example of a non-distilled alcoholic beverage produced by yeast?", "extras": [], "options": [{"marker": "A", "text": "Beer"}, {"marker": "B", "text": "Rum"}, {"marker": "C", "text": "Whisky"}, {"marker": "D", "text": "Brandy"}], "answerIndex": 0, "explanation": "Wine and beer are produced completely without distillation by fermenting fruit juices or malted barley using brewer's yeast (Saccharomyces cerevisiae). Whisky, brandy, and rum are produced by distillation of the fermented broth to concentrate alcohol levels.", "num": 72}, {"topic": "Biocontrol Agents", "tag": "NEET 2024", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2024 Question Paper", "stem": "Given below are two statements:\nStatement I: Bacterial infection by Bacillus thuringiensis can kill only caterpillar larvae.\nStatement II: B. thuringiensis cannot kill adult moths.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "Both Statement I and Statement II are correct"}, {"marker": "B", "text": "Both Statement I and Statement II are incorrect"}, {"marker": "C", "text": "Statement I is correct but Statement II is incorrect"}, {"marker": "D", "text": "Statement I is incorrect but Statement II is correct"}], "answerIndex": 0, "explanation": "Both statements are correct. Bacillus thuringiensis (Bt) produces an endotoxin that is activated in the alkaline midgut of feeding caterpillar larvae, killing them. Adult moths and butterflies do not feed in this manner and lack the necessary gut conditions to process the Bt toxin in lethal quantities, so they are not killed.", "num": 73}, {"topic": "Biocontrol Agents", "tag": "NEET 2024", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2024 Question Paper", "stem": "Given below are two statements:\nStatement I: Aphids and mosquitoes are natural pests.\nStatement II: Ladybird and dragonflies are natural pest controllers.\n\nIn light of the above statements, choose the most appropriate answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "Both Statement I and Statement II are correct"}, {"marker": "B", "text": "Both Statement I and Statement II are incorrect"}, {"marker": "C", "text": "Statement I is correct but Statement II is incorrect"}, {"marker": "D", "text": "Statement I is incorrect but Statement II is correct"}], "answerIndex": 0, "explanation": "Both statements are correct. Aphids (crop-damaging sap-suckers) and mosquitoes (disease vectors) are natural pests. Ladybird beetles feed on aphids and dragonflies prey on mosquitoes, making them natural biological control predators.", "num": 74}, {"topic": "Antibiotics & Immunity", "tag": "NEET 2024", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2024 Question Paper", "stem": "Given below are two statements:\nStatement I: Antibiotics are chemicals produced by microbes that kill other microbes.\nStatement II: Antibodies are chemicals formed in the body that eliminate microbes.\n\nIn the light of the above statements, choose the most appropriate answer from the options given below:", "extras": [], "options": [{"marker": "A", "text": "Statement I is correct but Statement II is incorrect"}, {"marker": "B", "text": "Statement I is incorrect but Statement II is correct"}, {"marker": "C", "text": "Both Statement I and Statement II are correct"}, {"marker": "D", "text": "Both Statement I and Statement II are incorrect"}], "answerIndex": 2, "explanation": "Both statements are correct. Antibiotics are chemical substances produced by certain microorganisms (such as bacteria and fungi) that kill or inhibit the growth of pathogenic microbes. Antibodies are protective proteins produced endogenously by B-lymphocytes of the immune system to recognize and eliminate foreign microbes.", "num": 75}, {"topic": "Nitrogen Cycle & Microbes", "tag": "NEET 2019", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2019 Question Paper", "stem": "Thiobacillus is a group of bacteria helpful in carrying out:", "extras": [], "options": [{"marker": "A", "text": "Nitrification"}, {"marker": "B", "text": "Denitrification"}, {"marker": "C", "text": "Nitrogen fixation"}, {"marker": "D", "text": "Chemoautotrophic fixation"}], "answerIndex": 1, "explanation": "Bacteria belonging to the genus Thiobacillus (such as Thiobacillus denitrificans) and Pseudomonas reduce soil nitrates (NO3-) back into gaseous nitrogen (N2), carrying out denitrification.", "num": 76}, {"topic": "Biofertilisers & Symbionts", "tag": "NEET 2017", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2017 Question Paper", "stem": "Select the mismatch from the following pairs:", "extras": [], "options": [{"marker": "A", "text": "Rhodospirillum &mdash; Mycorrhiza"}, {"marker": "B", "text": "Anabaena &mdash; Nitrogen fixer"}, {"marker": "C", "text": "Rhizobium &mdash; Alfalfa"}, {"marker": "D", "text": "Frankia &mdash; Alnus"}], "answerIndex": 0, "explanation": "The mismatched pair is Rhodospirillum - Mycorrhiza. Rhodospirillum is a free-living, anaerobic nitrogen-fixing bacterium in the soil. Mycorrhiza is a symbiotic mutualism between fungi (such as Glomus) and roots of higher plants.", "num": 77}, {"topic": "Sewage Treatment", "tag": "NEET 2017", "sourceUrl": "https://edurev.in/t/133169/Microbes-in-Human-Welfare-Past-Year-Questions-Of-N", "sourceLabel": "EduRev NEET 2017 Question Paper", "stem": "Which of the following in sewage treatment removes suspended solids and large physical debris?", "extras": [], "options": [{"marker": "A", "text": "Secondary treatment"}, {"marker": "B", "text": "Primary treatment"}, {"marker": "C", "text": "Sludge treatment"}, {"marker": "D", "text": "Tertiary treatment"}], "answerIndex": 1, "explanation": "Primary sewage treatment is a purely physical process that removes large floating debris by sequential filtration and grit (soil and small pebbles) and other heavy suspended solids by sedimentation, forming the primary sludge.", "num": 78}];
+
+    const state = {
+      view: 'home',            // 'home' | 'kcet' | 'neet' | 'notes'
+      mode: 'doc',             // 'doc' | 'quiz'
+      showAllAnswers: true,    // for document mode
+      searchQuery: '',
+      topicFilter: 'All',
+      kcetSelections: {},     // { qNum: selectedOptIdx }
+      neetSelections: {}      // { qNum: selectedOptIdx }
+    };
+
+    function switchView(viewName, defaultMode = null) {
+      state.view = viewName;
+      if (defaultMode) {
+        state.mode = defaultMode;
+      }
+      state.searchQuery = '';
+      state.topicFilter = 'All';
+
+      const homeView = document.getElementById('homeView');
+      const bankView = document.getElementById('bankView');
+      const notesView = document.getElementById('notesView');
+
+      const navHome = document.getElementById('navHomeBtn');
+      const navKcet = document.getElementById('navKcetBtn');
+      const navNeet = document.getElementById('navNeetBtn');
+      const navNotes = document.getElementById('navNotesBtn');
+
+      homeView.classList.add('hidden');
+      bankView.classList.add('hidden');
+      notesView.classList.add('hidden');
+
+      const navClassActive = 'px-3 py-1.5 rounded-lg bg-white text-indigo-700 shadow-xs transition';
+      const navClassInactive = 'px-3 py-1.5 rounded-lg hover:text-slate-900 transition';
+
+      navHome.className = (viewName === 'home') ? navClassActive : navClassInactive;
+      navKcet.className = (viewName === 'kcet') ? navClassActive : navClassInactive;
+      navNeet.className = (viewName === 'neet') ? navClassActive : navClassInactive;
+      navNotes.className = (viewName === 'notes') ? navClassActive : navClassInactive;
+
+      if (viewName === 'home') {
+        homeView.classList.remove('hidden');
+        updateHomeStats();
+      } else if (viewName === 'notes') {
+        notesView.classList.remove('hidden');
+      } else if (viewName === 'kcet' || viewName === 'neet') {
+        bankView.classList.remove('hidden');
+        setupBankView();
+        renderActiveBank();
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setupBankView() {
+      const isKcet = (state.view === 'kcet');
+      const bankTitle = document.getElementById('bankTitle');
+      const bankSubtitle = document.getElementById('bankSubtitle');
+
+      if (isKcet) {
+        bankTitle.textContent = "KCET Microbes Question Bank (" + KCET_DATA.length + " Questions)";
+        bankSubtitle.textContent = "Karnataka CET Biology Previous Year Questions (2014–2026)";
+      } else {
+        bankTitle.textContent = "NEET PYQ Microbes Question Bank (" + NEET_DATA.length + " Questions)";
+        bankSubtitle.textContent = "AIPMT & NEET National Entrance Previous Year Questions (2000–2026)";
+      }
+
+      // Build topic filter pills
+      const data = isKcet ? KCET_DATA : NEET_DATA;
+      const topics = ['All', ...new Set(data.map(q => q.topic))];
+      const pillsContainer = document.getElementById('topicFilterPills');
+      pillsContainer.innerHTML = topics.map(top => {
+        const active = (top === state.topicFilter);
+        return `<button type="button" class="top-pill px-2.5 py-1 rounded-full font-semibold transition ${active ? 'bg-indigo-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}" data-topic="${top}">${top}</button>`;
+      }).join('');
+
+      pillsContainer.querySelectorAll('.top-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.topicFilter = btn.getAttribute('data-topic');
+          setupBankView();
+          renderActiveBank();
+        });
+      });
+
+      // Update Mode button styling
+      const docBtn = document.getElementById('modeDocBtn');
+      const quizBtn = document.getElementById('modeQuizBtn');
+      const modeActive = 'px-3 py-1.5 rounded-lg bg-white text-indigo-700 shadow-xs transition';
+      const modeInactive = 'px-3 py-1.5 rounded-lg hover:text-slate-900 transition';
+      docBtn.className = (state.mode === 'doc') ? modeActive : modeInactive;
+      quizBtn.className = (state.mode === 'quiz') ? modeActive : modeInactive;
+
+      // Quiz banner visibility
+      const quizBanner = document.getElementById('quizBanner');
+      if (state.mode === 'quiz') {
+        quizBanner.classList.remove('hidden');
+        updateQuizBannerScore();
+      } else {
+        quizBanner.classList.add('hidden');
+      }
+    }
+
+    function getActiveDataset() {
+      return (state.view === 'kcet') ? KCET_DATA : NEET_DATA;
+    }
+
+    function getActiveSelections() {
+      return (state.view === 'kcet') ? state.kcetSelections : state.neetSelections;
+    }
+
+    function renderActiveBank() {
+      const data = getActiveDataset();
+      const selections = getActiveSelections();
+      const container = document.getElementById('questionsContainer');
+
+      const filtered = data.filter(q => {
+        const matchTopic = (state.topicFilter === 'All' || q.topic === state.topicFilter);
+        const matchSearch = (!state.searchQuery || 
+          q.stem.toLowerCase().includes(state.searchQuery.toLowerCase()) || 
+          q.tag.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+          q.topic.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+          q.explanation.toLowerCase().includes(state.searchQuery.toLowerCase())
+        );
+        return matchTopic && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white rounded-xl border border-slate-200 p-8 text-center text-slate-500 text-sm">
+            No questions matched your search or filter criteria. Try adjusting your search query.
+          </div>
+        `;
+        renderMatrix(data);
+        return;
+      }
+
+      container.innerHTML = filtered.map(q => renderQuestionCard(q, selections)).join('');
+      renderMatrix(data);
+      updateHomeStats();
+      if (state.mode === 'quiz') {
+        updateQuizBannerScore();
+      }
+    }
+
+    function renderQuestionCard(q, selections) {
+      const isQuiz = (state.mode === 'quiz');
+      const userSelected = selections[q.num];
+      const hasAnswered = (userSelected !== undefined);
+      const isCorrect = (userSelected === q.answerIndex);
+
+      // Render extras if present (e.g. matching tables)
+      let extrasHtml = '';
+      if (q.extras && q.extras.length > 0) {
+        q.extras.forEach(extra => {
+          if (extra.type === 'table') {
+            extrasHtml += `
+              <div class="my-3 overflow-x-auto">
+                <table class="text-xs border border-slate-200 rounded-lg overflow-hidden w-full max-w-md bg-slate-50">
+                  <thead class="bg-slate-100 font-bold text-slate-700">
+                    <tr>
+                      ${extra.headers.map(h => `<th class="border-b border-slate-200 px-3 py-1.5 text-left">${h}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${extra.rows.map(r => `
+                      <tr class="border-b border-slate-100">
+                        ${r.map(c => `<td class="px-3 py-1.5">${c}</td>`).join('')}
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            `;
+          }
+        });
+      }
+
+      // Render options
+      const optionsHtml = q.options.map((opt, idx) => {
+        const isOptCorrect = (idx === q.answerIndex);
+        if (isQuiz) {
+          // Quiz mode interactive option styling
+          let btnClass = 'w-full text-left p-3 rounded-xl border text-xs sm:text-sm font-medium transition flex items-start gap-2.5 opt-btn ';
+          if (!hasAnswered) {
+            btnClass += 'border-slate-200 bg-white hover:bg-indigo-50/50 hover:border-indigo-300 text-slate-700';
+          } else if (idx === userSelected) {
+            if (isCorrect) {
+              btnClass += 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold';
+            } else {
+              btnClass += 'border-rose-500 bg-rose-50 text-rose-950 font-bold';
+            }
+          } else if (isOptCorrect) {
+            btnClass += 'border-emerald-500 bg-emerald-50/80 text-emerald-950 font-bold';
+          } else {
+            btnClass += 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+          }
+
+          const badgeClass = (!hasAnswered) ? 'bg-slate-100 text-slate-700' :
+                             (idx === userSelected && isCorrect) ? 'bg-emerald-600 text-white' :
+                             (idx === userSelected && !isCorrect) ? 'bg-rose-600 text-white' :
+                             (isOptCorrect) ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-500';
+
+          return `
+            <button type="button" class="${btnClass}" data-qnum="${q.num}" data-optidx="${idx}" ${hasAnswered ? 'disabled' : ''}>
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md text-xs font-bold shrink-0 ${badgeClass}">${opt.marker}</span>
+              <span class="leading-relaxed">${opt.text}</span>
+            </button>
+          `;
+        } else {
+          // Document Mode styling
+          const showKey = state.showAllAnswers;
+          let optClass = 'p-2.5 rounded-xl border text-xs sm:text-sm flex items-start gap-2.5 ';
+          if (showKey && isOptCorrect) {
+            optClass += 'border-emerald-400 bg-emerald-50/60 font-semibold text-emerald-950';
+          } else {
+            optClass += 'border-slate-200 bg-white text-slate-700';
+          }
+          const badgeClass = (showKey && isOptCorrect) ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600';
+          return `
+            <div class="${optClass}">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-md text-xs font-bold shrink-0 ${badgeClass}">${opt.marker}</span>
+              <span class="leading-relaxed">${opt.text}</span>
+            </div>
+          `;
+        }
+      }).join('');
+
+      // Explanation box
+      let explanationHtml = '';
+      const shouldShowExplanation = (!isQuiz && state.showAllAnswers) || (isQuiz && hasAnswered);
+      if (shouldShowExplanation) {
+        const statusBadge = isQuiz ? (
+          isCorrect ? '<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Correct!</span>' :
+                      '<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-bold">Incorrect</span>'
+        ) : '';
+
+        explanationHtml = `
+          <div class="mt-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-1">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-bold text-slate-900">
+                Correct Answer: Option ${q.options[q.answerIndex].marker} &bull; ${q.options[q.answerIndex].text}
+              </span>
+              ${statusBadge}
+            </div>
+            <p class="leading-relaxed text-slate-600 mt-1">${q.explanation}</p>
+          </div>
+        `;
+      }
+
+      return `
+        <article id="q-${q.num}" class="q-card bg-white rounded-xl border border-slate-200 p-5 shadow-xs transition hover:border-slate-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center px-2 py-0.5 rounded-md bg-indigo-600 text-white text-xs font-bold">
+                Q${q.num}
+              </span>
+              <span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 text-xs font-semibold">
+                ${q.tag}
+              </span>
+            </div>
+            <span class="px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 text-xs font-medium">
+              ${q.topic}
+            </span>
+          </div>
+
+          <h3 class="text-sm sm:text-base font-semibold text-slate-900 leading-relaxed mb-3">
+            ${q.stem.replace(/\n/g, '<br>')}
+          </h3>
+
+          ${extrasHtml}
+
+          <div class="space-y-2 mt-3">
+            ${optionsHtml}
+          </div>
+
+          ${explanationHtml}
+        </article>
+      `;
+    }
+
+    function renderMatrix(data) {
+      const selections = getActiveSelections();
+      const grid = document.getElementById('matrixGrid');
+      grid.innerHTML = data.map(q => {
+        const userSelected = selections[q.num];
+        const isAnswered = (userSelected !== undefined);
+        let statusClass = 'bg-slate-100 text-slate-700 hover:bg-slate-200 border-slate-200';
+        if (state.mode === 'quiz' && isAnswered) {
+          if (userSelected === q.answerIndex) {
+            statusClass = 'bg-emerald-600 text-white border-emerald-600';
+          } else {
+            statusClass = 'bg-rose-600 text-white border-rose-600';
+          }
+        } else if (state.mode === 'doc' && state.showAllAnswers) {
+          statusClass = 'bg-indigo-50 text-indigo-800 border-indigo-200';
+        }
+        return `
+          <a href="#q-${q.num}" class="py-1 px-1 rounded border text-xs font-bold transition flex items-center justify-center gap-0.5 ${statusClass}" title="Q${q.num}: Ans ${q.options[q.answerIndex].marker}">
+            <span>Q${q.num}</span>
+            <span class="text-[10px] opacity-75">${q.options[q.answerIndex].marker}</span>
+          </a>
+        `;
+      }).join('');
+    }
+
+    function updateHomeStats() {
+      const kcetAnswered = Object.keys(state.kcetSelections).length;
+      let kcetCorrect = 0;
+      Object.keys(state.kcetSelections).forEach(qNum => {
+        const q = KCET_DATA.find(item => item.num === Number(qNum));
+        if (q && state.kcetSelections[qNum] === q.answerIndex) kcetCorrect++;
+      });
+      const kcetPct = kcetAnswered ? Math.round((kcetCorrect / kcetAnswered) * 100) : 0;
+      document.getElementById('statKcetProgress').textContent = kcetAnswered + ' / ' + KCET_DATA.length;
+      document.getElementById('statKcetScore').textContent = `Score: ${kcetCorrect} correct (${kcetPct}%)`;
+
+      const neetAnswered = Object.keys(state.neetSelections).length;
+      let neetCorrect = 0;
+      Object.keys(state.neetSelections).forEach(qNum => {
+        const q = NEET_DATA.find(item => item.num === Number(qNum));
+        if (q && state.neetSelections[qNum] === q.answerIndex) neetCorrect++;
+      });
+      const neetPct = neetAnswered ? Math.round((neetCorrect / neetAnswered) * 100) : 0;
+      document.getElementById('statNeetProgress').textContent = neetAnswered + ' / ' + NEET_DATA.length;
+      document.getElementById('statNeetScore').textContent = `Score: ${neetCorrect} correct (${neetPct}%)`;
+    }
+
+    function updateQuizBannerScore() {
+      const isKcet = (state.view === 'kcet');
+      const data = isKcet ? KCET_DATA : NEET_DATA;
+      const selections = isKcet ? state.kcetSelections : state.neetSelections;
+
+      const total = data.length;
+      const attempted = Object.keys(selections).length;
+      let correct = 0;
+      Object.keys(selections).forEach(qNum => {
+        const q = data.find(item => item.num === Number(qNum));
+        if (q && selections[qNum] === q.answerIndex) correct++;
+      });
+      const wrong = attempted - correct;
+      const accuracy = attempted ? Math.round((correct / attempted) * 100) : 0;
+
+      document.getElementById('quizTotal').textContent = total;
+      document.getElementById('quizAttempted').textContent = attempted;
+      document.getElementById('quizCorrect').textContent = correct;
+      document.getElementById('quizWrong').textContent = wrong;
+      document.getElementById('quizAccuracy').textContent = `${accuracy}%`;
+    }
+
+    // Navigation Listeners
+    document.getElementById('brandHomeBtn').addEventListener('click', () => switchView('home'));
+    document.getElementById('navHomeBtn').addEventListener('click', () => switchView('home'));
+    document.getElementById('navKcetBtn').addEventListener('click', () => switchView('kcet'));
+    document.getElementById('navNeetBtn').addEventListener('click', () => switchView('neet'));
+    document.getElementById('navNotesBtn').addEventListener('click', () => switchView('notes'));
+
+    document.getElementById('heroStartKcetBtn').addEventListener('click', () => switchView('kcet', 'doc'));
+    document.getElementById('heroStartNeetBtn').addEventListener('click', () => switchView('neet', 'doc'));
+    document.getElementById('heroOpenNotesBtn').addEventListener('click', () => switchView('notes'));
+
+    document.getElementById('cardKcetDocBtn').addEventListener('click', () => switchView('kcet', 'doc'));
+    document.getElementById('cardKcetQuizBtn').addEventListener('click', () => switchView('kcet', 'quiz'));
+    document.getElementById('cardNeetDocBtn').addEventListener('click', () => switchView('neet', 'doc'));
+    document.getElementById('cardNeetQuizBtn').addEventListener('click', () => switchView('neet', 'quiz'));
+
+    document.getElementById('backToPortalBtn').addEventListener('click', () => switchView('home'));
+    document.getElementById('notesBackHomeBtn').addEventListener('click', () => switchView('home'));
+
+    // Option Click Event Delegation
+    document.getElementById('questionsContainer').addEventListener('click', (e) => {
+      const btn = e.target.closest('.opt-btn');
+      if (!btn || state.mode !== 'quiz') return;
+      const qNum = Number(btn.getAttribute('data-qnum'));
+      const optIdx = Number(btn.getAttribute('data-optidx'));
+      if (state.view === 'kcet') {
+        state.kcetSelections[qNum] = optIdx;
+      } else if (state.view === 'neet') {
+        state.neetSelections[qNum] = optIdx;
+      }
+      renderActiveBank();
+    });
+
+    // Mode Switching
+    document.getElementById('modeDocBtn').addEventListener('click', () => switchView(state.view, 'doc'));
+    document.getElementById('modeQuizBtn').addEventListener('click', () => switchView(state.view, 'quiz'));
+
+    // Toggle Answer Key in Document View
+    document.getElementById('toggleAnswersBtn').addEventListener('click', () => {
+      state.showAllAnswers = !state.showAllAnswers;
+      document.getElementById('toggleAnswersBtn').textContent = state.showAllAnswers ? 'Hide Answer Key' : 'Show Answer Key';
+      renderActiveBank();
+    });
+
+    // Reset Quiz
+    document.getElementById('resetQuizBtn').addEventListener('click', () => {
+      if (state.view === 'kcet') {
+        state.kcetSelections = {};
+      } else if (state.view === 'neet') {
+        state.neetSelections = {};
+      }
+      renderActiveBank();
+    });
+
+    // Search Input
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      state.searchQuery = e.target.value;
+      renderActiveBank();
+    });
+
+    // Print Button
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('notesPrintBtn').addEventListener('click', () => window.print());
+
+    // Initial View setup
+    switchView('home');
+  </script>
+</body>
+</html>
